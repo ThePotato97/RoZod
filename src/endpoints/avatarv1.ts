@@ -9,7 +9,7 @@ const Roblox_Web_Responses_Avatar_ScaleModel = z
     proportion: z.number(),
     bodyType: z.number(),
   })
-  .partial();
+  ;
 const Roblox_Api_Avatar_Models_BodyColorsModel = z
   .object({
     headColorId: z.number().int(),
@@ -19,15 +19,15 @@ const Roblox_Api_Avatar_Models_BodyColorsModel = z
     rightLegColorId: z.number().int(),
     leftLegColorId: z.number().int(),
   })
-  .partial();
-const Roblox_Api_Avatar_Models_AssetTypeModel = z.object({ id: z.number().int(), name: z.string() }).partial();
+  ;
+const Roblox_Api_Avatar_Models_AssetTypeModel = z.object({ id: z.number().int(), name: z.string() });
 const Roblox_Api_Avatar_Models_AssetMetaModelV1 = z
   .object({
     order: z.number().int(),
     puffiness: z.number(),
     version: z.number().int(),
   })
-  .partial();
+  ;
 const Roblox_Api_Avatar_Models_AssetModelV2 = z
   .object({
     id: z.number().int(),
@@ -36,14 +36,14 @@ const Roblox_Api_Avatar_Models_AssetModelV2 = z
     currentVersionId: z.number().int(),
     meta: Roblox_Api_Avatar_Models_AssetMetaModelV1,
   })
-  .partial();
+  ;
 const Roblox_Api_Avatar_Models_EmoteResponseModel = z
   .object({
     assetId: z.number().int(),
     assetName: z.string(),
     position: z.number().int(),
   })
-  .partial();
+  ;
 const Roblox_Api_Avatar_Models_AvatarModelV2 = z
   .object({
     scales: Roblox_Web_Responses_Avatar_ScaleModel,
@@ -54,7 +54,7 @@ const Roblox_Api_Avatar_Models_AvatarModelV2 = z
     defaultPantsApplied: z.boolean(),
     emotes: z.array(Roblox_Api_Avatar_Models_EmoteResponseModel),
   })
-  .partial();
+  ;
 const Roblox_Api_Avatar_Models_AvatarMetadataModel = z
   .object({
     enableDefaultClothingMessage: z.boolean(),
@@ -75,30 +75,30 @@ const Roblox_Api_Avatar_Models_AvatarMetadataModel = z
     LCEnabledInEditorAndCatalog: z.boolean(),
     isLCCompletelyEnabled: z.boolean(),
   })
-  .partial();
+  ;
 const Roblox_Api_Avatar_Models_ScaleRulesModel = z
   .object({ min: z.number(), max: z.number(), increment: z.number() })
-  .partial();
+  ;
 const Roblox_Api_Avatar_Models_AssetTypeRulesModel = z
   .object({
     maxNumber: z.number().int(),
     id: z.number().int(),
     name: z.string(),
   })
-  .partial();
+  ;
 const Roblox_Api_Avatar_Models_BodyColorModel = z
   .object({
     brickColorId: z.number().int(),
     hexColor: z.string(),
     name: z.string(),
   })
-  .partial();
+  ;
 const Roblox_Api_Avatar_Models_DefaultClothingAssets = z
   .object({
     defaultShirtAssetIds: z.array(z.number()),
     defaultPantAssetIds: z.array(z.number()),
   })
-  .partial();
+  ;
 const Roblox_Api_Avatar_Models_AvatarRulesModel = z
   .object({
     playerAvatarTypes: z.array(z.union([z.literal(1), z.literal(3)])),
@@ -112,14 +112,14 @@ const Roblox_Api_Avatar_Models_AvatarRulesModel = z
     bundlesEnabledForUser: z.boolean(),
     emotesEnabledForUser: z.boolean(),
   })
-  .partial();
+  ;
 const Roblox_Api_Avatar_Models_UniverseAvatarAssetOverrideResponseModel = z
   .object({
     assetID: z.number().int(),
     assetTypeID: z.number().int(),
     isPlayerChoice: z.boolean(),
   })
-  .partial();
+  ;
 const Roblox_Api_Avatar_Models_GameStartInfoResponse = z
   .object({
     gameAvatarType: z.string(),
@@ -133,7 +133,7 @@ const Roblox_Api_Avatar_Models_GameStartInfoResponse = z
     universeAvatarAssetOverrides: z.array(Roblox_Api_Avatar_Models_UniverseAvatarAssetOverrideResponseModel),
     moderationStatus: z.string(),
   })
-  .partial();
+  ;
 const Roblox_Api_Avatar_Models_OutfitDetailsModel = z
   .object({
     id: z.number().int(),
@@ -145,7 +145,7 @@ const Roblox_Api_Avatar_Models_OutfitDetailsModel = z
     outfitType: z.string(),
     isEditable: z.boolean(),
   })
-  .partial();
+  ;
 const Roblox_Api_Avatar_Models_RecentItemModel = z
   .object({
     id: z.number().int(),
@@ -154,36 +154,36 @@ const Roblox_Api_Avatar_Models_RecentItemModel = z
     assetType: Roblox_Api_Avatar_Models_AssetTypeModel,
     isEditable: z.boolean(),
   })
-  .partial();
+  ;
 const Roblox_Web_WebAPI_Models_ApiLegacyPageResponse_Roblox_Api_Avatar_Models_RecentItemModel_ = z
   .object({
     data: z.array(Roblox_Api_Avatar_Models_RecentItemModel),
     total: z.number().int(),
   })
-  .partial();
-const Roblox_Api_Avatar_Models_AssetIdListModel = z.object({ assetIds: z.array(z.number()) }).partial();
+  ;
+const Roblox_Api_Avatar_Models_AssetIdListModel = z.object({ assetIds: z.array(z.number()) });
 const Roblox_Api_Avatar_Models_OutfitModel = z
   .object({ id: z.number().int(), name: z.string(), isEditable: z.boolean() })
-  .partial();
+  ;
 const Roblox_Api_Avatar_Models_AvatarFilteredPageResponse_Roblox_Api_Avatar_Models_OutfitModel_ = z
   .object({
     filteredCount: z.number().int(),
     data: z.array(Roblox_Api_Avatar_Models_OutfitModel),
     total: z.number().int(),
   })
-  .partial();
-const Roblox_Api_Avatar_Models_AvatarApiSuccessResponse = z.object({ success: z.boolean() }).partial();
-const Roblox_Api_Avatar_Controllers_V1_AvatarController_EmptyResponse = z.object({}).partial();
+  ;
+const Roblox_Api_Avatar_Models_AvatarApiSuccessResponse = z.object({ success: z.boolean() });
+const Roblox_Api_Avatar_Controllers_V1_AvatarController_EmptyResponse = z.object({});
 const Roblox_Api_Avatar_Models_PlayerAvatarTypeModel = z
   .object({ playerAvatarType: z.union([z.literal(1), z.literal(3)]) })
-  .partial();
+  ;
 const Roblox_Api_Avatar_Models_WearResponseModel = z
   .object({
     invalidAssets: z.array(Roblox_Api_Avatar_Models_AssetModelV2),
     invalidAssetIds: z.array(z.number()),
     success: z.boolean(),
   })
-  .partial();
+  ;
 const Roblox_Api_Avatar_Models_OutfitUpdateModelV1 = z
   .object({
     name: z.string(),
@@ -193,7 +193,7 @@ const Roblox_Api_Avatar_Models_OutfitUpdateModelV1 = z
     playerAvatarType: z.string(),
     outfitType: z.union([z.literal(0), z.literal(1), z.literal(2)]),
   })
-  .partial();
+  ;
 
 const schemas = {
   Roblox_Web_Responses_Avatar_ScaleModel,

@@ -6,7 +6,7 @@ const Roblox_Web_Assets_IAssetItemError = z
     Message: z.string(),
     CustomErrorCode: z.union([z.literal(0), z.literal(1), z.literal(2)]),
   })
-  .partial();
+  ;
 const Roblox_Web_Assets_IAssetResponseItem = z
   .object({
     Location: z.string(),
@@ -16,7 +16,7 @@ const Roblox_Web_Assets_IAssetResponseItem = z
     IsCopyrightProtected: z.boolean(),
     IsArchived: z.boolean(),
   })
-  .partial();
+  ;
 const Roblox_Web_Assets_BatchAssetRequestItem = z
   .object({
     assetName: z.string(),
@@ -38,7 +38,7 @@ const Roblox_Web_Assets_BatchAssetRequestItem = z
     assetFormat: z.string(),
     'roblox-assetFormat': z.string(),
   })
-  .partial();
+  ;
 
 const schemas = {
   Roblox_Web_Assets_IAssetItemError,

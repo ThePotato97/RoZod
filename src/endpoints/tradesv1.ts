@@ -2,7 +2,7 @@ import { z } from 'zod';
 
 const Roblox_Web_Responses_Users_SkinnyUserResponse = z
   .object({ id: z.number().int(), name: z.string(), displayName: z.string() })
-  .partial();
+  ;
 const Roblox_Trades_Api_UserAssetResponse = z
   .object({
     id: z.number().int(),
@@ -14,14 +14,14 @@ const Roblox_Trades_Api_UserAssetResponse = z
     assetStock: z.number().int(),
     membershipType: z.union([z.literal(0), z.literal(1), z.literal(2), z.literal(3), z.literal(4)]),
   })
-  .partial();
+  ;
 const Roblox_Trades_Api_TradeOfferResponse = z
   .object({
     user: Roblox_Web_Responses_Users_SkinnyUserResponse,
     userAssets: z.array(Roblox_Trades_Api_UserAssetResponse),
     robux: z.number().int(),
   })
-  .partial();
+  ;
 const Roblox_Trades_Api_TradeDetailResponse = z
   .object({
     offers: z.array(Roblox_Trades_Api_TradeOfferResponse),
@@ -44,7 +44,7 @@ const Roblox_Trades_Api_TradeDetailResponse = z
       z.literal(11),
     ]),
   })
-  .partial();
+  ;
 const Roblox_Trades_Api_TradeResponse = z
   .object({
     id: z.number().int(),
@@ -66,15 +66,15 @@ const Roblox_Trades_Api_TradeResponse = z
       z.literal(11),
     ]),
   })
-  .partial();
+  ;
 const Roblox_Web_WebAPI_Models_ApiPageResponse_Roblox_Trades_Api_TradeResponse_ = z
   .object({
     previousPageCursor: z.string(),
     nextPageCursor: z.string(),
     data: z.array(Roblox_Trades_Api_TradeResponse),
   })
-  .partial();
-const Roblox_Trades_Api_TradeCountResponse = z.object({ count: z.number().int() }).partial();
+  ;
+const Roblox_Trades_Api_TradeCountResponse = z.object({ count: z.number().int() });
 const Roblox_Trades_Api_TradeMetadata = z
   .object({
     maxItemsPerSide: z.number().int(),
@@ -82,7 +82,7 @@ const Roblox_Trades_Api_TradeMetadata = z
     tradeSystemMaxRobuxPercent: z.number(),
     tradeSystemRobuxFee: z.number(),
   })
-  .partial();
+  ;
 const Roblox_Trades_Api_CanTradeResponse = z
   .object({
     canTrade: z.boolean(),
@@ -97,17 +97,17 @@ const Roblox_Trades_Api_CanTradeResponse = z
       z.literal(7),
     ]),
   })
-  .partial();
-const Roblox_Web_WebAPI_ApiEmptyResponseModel = z.object({}).partial();
+  ;
+const Roblox_Web_WebAPI_ApiEmptyResponseModel = z.object({});
 const Roblox_Trades_Api_TradeOfferRequest = z
   .object({
     userId: z.number().int(),
     userAssetIds: z.array(z.number()),
     robux: z.number().int(),
   })
-  .partial();
-const Roblox_Trades_Api_TradeRequest = z.object({ offers: z.array(Roblox_Trades_Api_TradeOfferRequest) }).partial();
-const Roblox_Trades_Api_NewTradeResponse = z.object({ id: z.number().int() }).partial();
+  ;
+const Roblox_Trades_Api_TradeRequest = z.object({ offers: z.array(Roblox_Trades_Api_TradeOfferRequest) });
+const Roblox_Trades_Api_NewTradeResponse = z.object({ id: z.number().int() });
 
 const schemas = {
   Roblox_Web_Responses_Users_SkinnyUserResponse,

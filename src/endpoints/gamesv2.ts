@@ -10,19 +10,19 @@ const Roblox_Web_Responses_Games_GameMediaItemResponseV2 = z
     approved: z.boolean(),
     altText: z.string(),
   })
-  .partial();
+  ;
 const Roblox_Web_WebAPI_Models_ApiArrayResponse_Roblox_Web_Responses_Games_GameMediaItemResponseV2_ = z
   .object({
     data: z.array(Roblox_Web_Responses_Games_GameMediaItemResponseV2),
   })
-  .partial();
+  ;
 const Roblox_Web_Responses_RelatedEntityTypeResponse_Roblox_Platform_Core_CreatorType_ = z
   .object({
     id: z.number().int(),
     type: z.union([z.literal(0), z.literal(1)]),
     name: z.string(),
   })
-  .partial();
+  ;
 const Roblox_Web_Responses_RelatedEntityTypeResponse_Roblox_Platform_Assets_AssetType_ = z
   .object({
     id: z.number().int(),
@@ -103,7 +103,7 @@ const Roblox_Web_Responses_RelatedEntityTypeResponse_Roblox_Platform_Assets_Asse
     ]),
     name: z.string(),
   })
-  .partial();
+  ;
 const Roblox_Web_Responses_Games_GameResponseV2 = z
   .object({
     id: z.number().int(),
@@ -115,14 +115,14 @@ const Roblox_Web_Responses_Games_GameResponseV2 = z
     updated: z.string().datetime(),
     placeVisits: z.number().int(),
   })
-  .partial();
+  ;
 const Roblox_Web_WebAPI_Models_ApiPageResponse_Roblox_Web_Responses_Games_GameResponseV2_ = z
   .object({
     previousPageCursor: z.string(),
     nextPageCursor: z.string(),
     data: z.array(Roblox_Web_Responses_Games_GameResponseV2),
   })
-  .partial();
+  ;
 
 const schemas = {
   Roblox_Web_Responses_Games_GameMediaItemResponseV2,

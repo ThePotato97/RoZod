@@ -6,7 +6,7 @@ const Roblox_AccountInformation_Api_Models_BirthdateResponse = z
     birthDay: z.number().int(),
     birthYear: z.number().int(),
   })
-  .partial();
+  ;
 const Roblox_AccountInformation_Api_Models_BirthdateRequest = z
   .object({
     birthMonth: z.number().int(),
@@ -14,12 +14,12 @@ const Roblox_AccountInformation_Api_Models_BirthdateRequest = z
     birthYear: z.number().int(),
     password: z.string(),
   })
-  .partial();
-const Roblox_Web_WebAPI_ApiEmptyResponseModel = z.object({}).partial();
-const Roblox_AccountInformation_Api_Models_DescriptionResponse = z.object({ description: z.string() }).partial();
-const Roblox_AccountInformation_Api_Models_DescriptionRequest = z.object({ description: z.string() }).partial();
-const Roblox_AccountInformation_Api_Models_GenderResponse = z.object({ gender: z.number().int() }).partial();
-const Roblox_AccountInformation_Api_Models_GenderRequest = z.object({ gender: z.string() }).partial();
+  ;
+const Roblox_Web_WebAPI_ApiEmptyResponseModel = z.object({});
+const Roblox_AccountInformation_Api_Models_DescriptionResponse = z.object({ description: z.string() });
+const Roblox_AccountInformation_Api_Models_DescriptionRequest = z.object({ description: z.string() });
+const Roblox_AccountInformation_Api_Models_GenderResponse = z.object({ gender: z.number().int() });
+const Roblox_AccountInformation_Api_Models_GenderRequest = z.object({ gender: z.string() });
 const Roblox_AccountInformation_Api_Models_MetadataResponse = z
   .object({
     isAllowedNotificationsEndpointDisabled: z.boolean(),
@@ -33,7 +33,7 @@ const Roblox_AccountInformation_Api_Models_MetadataResponse = z
     shouldDisplaySessionManagement: z.boolean(),
     shouldUseSecurityReactUI: z.boolean(),
   })
-  .partial();
+  ;
 const Roblox_AccountInformation_Api_Models_PhoneResponse = z
   .object({
     countryCode: z.string(),
@@ -43,7 +43,7 @@ const Roblox_AccountInformation_Api_Models_PhoneResponse = z
     verificationCodeLength: z.number().int(),
     canBypassPasswordForPhoneUpdate: z.boolean(),
   })
-  .partial();
+  ;
 const Roblox_AccountInformation_Api_Models_PhoneRequest = z
   .object({
     countryCode: z.string(),
@@ -51,7 +51,7 @@ const Roblox_AccountInformation_Api_Models_PhoneRequest = z
     phone: z.string(),
     password: z.string(),
   })
-  .partial();
+  ;
 const Roblox_AccountInformation_Api_Models_PromotionChannelsResponse = z
   .object({
     promotionChannelsVisibilityPrivacy: z.string(),
@@ -61,7 +61,7 @@ const Roblox_AccountInformation_Api_Models_PromotionChannelsResponse = z
     twitch: z.string(),
     guilded: z.string(),
   })
-  .partial();
+  ;
 const Roblox_AccountInformation_Api_Models_PromotionChannelsRequest = z
   .object({
     facebook: z.string(),
@@ -71,11 +71,11 @@ const Roblox_AccountInformation_Api_Models_PromotionChannelsRequest = z
     guilded: z.string(),
     promotionChannelsVisibilityPrivacy: z.string(),
   })
-  .partial();
+  ;
 const Roblox_AccountInformation_Api_Models_StarCodeAffiliateResponse = z
   .object({ userId: z.number().int(), name: z.string(), code: z.string() })
-  .partial();
-const Roblox_AccountInformation_Api_Models_StarCodeAffiliateRequest = z.object({ code: z.string() }).partial();
+  ;
+const Roblox_AccountInformation_Api_Models_StarCodeAffiliateRequest = z.object({ code: z.string() });
 const Roblox_AccountInformation_Api_Models_PromotionChannelsByUserIdResponse = z
   .object({
     facebook: z.string(),
@@ -84,7 +84,7 @@ const Roblox_AccountInformation_Api_Models_PromotionChannelsByUserIdResponse = z
     twitch: z.string(),
     guilded: z.string(),
   })
-  .partial();
+  ;
 const Roblox_AccountInformation_Api_RobloxBadgeResponse = z
   .object({
     id: z.number().int(),
@@ -92,16 +92,16 @@ const Roblox_AccountInformation_Api_RobloxBadgeResponse = z
     description: z.string(),
     imageUrl: z.string(),
   })
-  .partial();
+  ;
 const Roblox_AccountInformation_Api_Models_ConsecutiveLoginDaysResponse = z
   .object({ count: z.number().int() })
-  .partial();
-const Roblox_AccountInformation_Api_Models_VerifyEmailRequest = z.object({ ticket: z.string() }).partial();
+  ;
+const Roblox_AccountInformation_Api_Models_VerifyEmailRequest = z.object({ ticket: z.string() });
 const Roblox_AccountInformation_Api_Models_VerifyEmailResponse = z
   .object({ verifiedUserHatAssetId: z.number().int() })
-  .partial();
-const Roblox_AccountInformation_Api_Models_EmptyRequest = z.object({}).partial();
-const Roblox_AccountInformation_Api_Models_VerifyPhoneRequest = z.object({ code: z.string() }).partial();
+  ;
+const Roblox_AccountInformation_Api_Models_EmptyRequest = z.object({});
+const Roblox_AccountInformation_Api_Models_VerifyPhoneRequest = z.object({ code: z.string() });
 
 const schemas = {
   Roblox_AccountInformation_Api_Models_BirthdateResponse,

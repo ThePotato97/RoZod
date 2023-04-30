@@ -1,13 +1,13 @@
 import { z } from 'zod';
 
-const Roblox_Web_Assets_AssetFormatLocation = z.object({ assetFormat: z.string(), location: z.string() }).partial();
+const Roblox_Web_Assets_AssetFormatLocation = z.object({ assetFormat: z.string(), location: z.string() });
 const Roblox_Web_Assets_IAssetItemError = z
   .object({
     Code: z.number().int(),
     Message: z.string(),
     CustomErrorCode: z.union([z.literal(0), z.literal(1), z.literal(2)]),
   })
-  .partial();
+  ;
 const Roblox_Web_Assets_IAssetResponseItemV2 = z
   .object({
     Locations: z.array(Roblox_Web_Assets_AssetFormatLocation),
@@ -18,7 +18,7 @@ const Roblox_Web_Assets_IAssetResponseItemV2 = z
     IsArchived: z.boolean(),
     AssetTypeId: z.number().int(),
   })
-  .partial();
+  ;
 const Roblox_Web_Assets_IAssetResponseItem = z
   .object({
     Location: z.string(),
@@ -28,7 +28,7 @@ const Roblox_Web_Assets_IAssetResponseItem = z
     IsCopyrightProtected: z.boolean(),
     IsArchived: z.boolean(),
   })
-  .partial();
+  ;
 const Roblox_Web_Assets_BatchAssetRequestItem = z
   .object({
     assetName: z.string(),
@@ -50,7 +50,7 @@ const Roblox_Web_Assets_BatchAssetRequestItem = z
     assetFormat: z.string(),
     'roblox-assetFormat': z.string(),
   })
-  .partial();
+  ;
 
 const schemas = {
   Roblox_Web_Assets_AssetFormatLocation,

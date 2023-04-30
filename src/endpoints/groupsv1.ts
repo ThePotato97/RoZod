@@ -8,7 +8,7 @@ const Roblox_Groups_Api_Models_Response_UserModel = z
     username: z.string(),
     displayName: z.string(),
   })
-  .partial();
+  ;
 const Roblox_Groups_Api_ShoutResponse = z
   .object({
     body: z.string(),
@@ -16,7 +16,7 @@ const Roblox_Groups_Api_ShoutResponse = z
     created: z.string().datetime(),
     updated: z.string().datetime(),
   })
-  .partial();
+  ;
 const Roblox_Groups_Api_GroupDetailResponse = z
   .object({
     id: z.number().int(),
@@ -30,7 +30,7 @@ const Roblox_Groups_Api_GroupDetailResponse = z
     isLocked: z.boolean(),
     hasVerifiedBadge: z.boolean(),
   })
-  .partial();
+  ;
 const Roblox_Groups_Api_GroupRoleResponse = z
   .object({
     id: z.number().int(),
@@ -39,13 +39,13 @@ const Roblox_Groups_Api_GroupRoleResponse = z
     rank: z.number().int(),
     memberCount: z.number().int(),
   })
-  .partial();
+  ;
 const Roblox_Groups_Api_UserGroupRoleResponse = z
   .object({
     user: Roblox_Groups_Api_Models_Response_UserModel,
     role: Roblox_Groups_Api_GroupRoleResponse,
   })
-  .partial();
+  ;
 const Roblox_Groups_Api_Models_Response_GroupAuditLogResponseItem = z
   .object({
     actor: Roblox_Groups_Api_UserGroupRoleResponse,
@@ -53,29 +53,29 @@ const Roblox_Groups_Api_Models_Response_GroupAuditLogResponseItem = z
     description: z.unknown(),
     created: z.string().datetime(),
   })
-  .partial();
+  ;
 const Roblox_Groups_Api_GroupAuditLogPageResponse_Roblox_Groups_Api_Models_Response_GroupAuditLogResponseItem_ = z
   .object({
     previousPageCursor: z.string(),
     nextPageCursor: z.string(),
     data: z.array(Roblox_Groups_Api_Models_Response_GroupAuditLogResponseItem),
   })
-  .partial();
-const Roblox_Groups_Api_MembersRequest = z.object({ UserIds: z.array(z.number()) }).partial();
-const Roblox_Web_WebAPI_ApiEmptyResponseModel = z.object({}).partial();
+  ;
+const Roblox_Groups_Api_MembersRequest = z.object({ UserIds: z.array(z.number()) });
+const Roblox_Web_WebAPI_ApiEmptyResponseModel = z.object({});
 const Roblox_Groups_Api_GroupJoinRequestResponse = z
   .object({
     requester: Roblox_Groups_Api_Models_Response_UserModel,
     created: z.string().datetime(),
   })
-  .partial();
+  ;
 const Roblox_Web_WebAPI_Models_ApiPageResponse_Roblox_Groups_Api_GroupJoinRequestResponse_ = z
   .object({
     previousPageCursor: z.string(),
     nextPageCursor: z.string(),
     data: z.array(Roblox_Groups_Api_GroupJoinRequestResponse),
   })
-  .partial();
+  ;
 const Roblox_Groups_Api_GroupPostsPermissionsModel = z
   .object({
     viewWall: z.boolean(),
@@ -84,21 +84,21 @@ const Roblox_Groups_Api_GroupPostsPermissionsModel = z
     viewStatus: z.boolean(),
     postToStatus: z.boolean(),
   })
-  .partial();
+  ;
 const Roblox_Groups_Api_GroupMembershipPermissionsModel = z
   .object({
     changeRank: z.boolean(),
     inviteMembers: z.boolean(),
     removeMembers: z.boolean(),
   })
-  .partial();
+  ;
 const Roblox_Groups_Api_GroupManagementPermissionsModel = z
   .object({
     manageRelationships: z.boolean(),
     manageClan: z.boolean(),
     viewAuditLogs: z.boolean(),
   })
-  .partial();
+  ;
 const Roblox_Groups_Api_GroupEconomyPermissionsModel = z
   .object({
     spendGroupFunds: z.boolean(),
@@ -110,13 +110,13 @@ const Roblox_Groups_Api_GroupEconomyPermissionsModel = z
     viewGroupPayouts: z.boolean(),
     viewAnalytics: z.boolean(),
   })
-  .partial();
+  ;
 const Roblox_Groups_Api_GroupOpenCloudPermissionsModel = z
   .object({
     useCloudAuthentication: z.boolean(),
     administerCloudAuthentication: z.boolean(),
   })
-  .partial();
+  ;
 const Roblox_Groups_Api_GroupPermissionsModel = z
   .object({
     groupPostsPermissions: Roblox_Groups_Api_GroupPostsPermissionsModel,
@@ -125,7 +125,7 @@ const Roblox_Groups_Api_GroupPermissionsModel = z
     groupEconomyPermissions: Roblox_Groups_Api_GroupEconomyPermissionsModel,
     groupOpenCloudPermissions: Roblox_Groups_Api_GroupOpenCloudPermissionsModel,
   })
-  .partial();
+  ;
 const Roblox_Groups_Api_GroupMembershipMetadataResponse = z
   .object({
     groupId: z.number().int(),
@@ -138,45 +138,45 @@ const Roblox_Groups_Api_GroupMembershipMetadataResponse = z
     areEnemiesAllowed: z.boolean(),
     canConfigure: z.boolean(),
   })
-  .partial();
+  ;
 const Roblox_Groups_Api_Models_Response_GroupNameHistoryResponseItem = z
   .object({ name: z.string(), created: z.string().datetime() })
-  .partial();
+  ;
 const Roblox_Web_WebAPI_Models_ApiPageResponse_Roblox_Groups_Api_Models_Response_GroupNameHistoryResponseItem_ = z
   .object({
     previousPageCursor: z.string(),
     nextPageCursor: z.string(),
     data: z.array(Roblox_Groups_Api_Models_Response_GroupNameHistoryResponseItem),
   })
-  .partial();
+  ;
 const Roblox_Groups_Api_GroupPayoutRestrictionResponse = z
   .object({
     canUseRecurringPayout: z.boolean(),
     canUseOneTimePayout: z.boolean(),
   })
-  .partial();
+  ;
 const Roblox_Groups_Api_GroupPayoutResponse = z
   .object({
     user: Roblox_Groups_Api_Models_Response_UserModel,
     percentage: z.number().int(),
   })
-  .partial();
+  ;
 const Roblox_Web_WebAPI_Models_ApiArrayResponse_Roblox_Groups_Api_GroupPayoutResponse_ = z
   .object({ data: z.array(Roblox_Groups_Api_GroupPayoutResponse) })
-  .partial();
+  ;
 const Roblox_Groups_Api_PayoutRecipientRequest = z
   .object({
     recipientId: z.number().int(),
     recipientType: z.union([z.literal(0), z.literal(1)]),
     amount: z.number().int(),
   })
-  .partial();
+  ;
 const Roblox_Groups_Api_PayoutRequest = z
   .object({
     PayoutType: z.union([z.literal(1), z.literal(2)]),
     Recipients: z.array(Roblox_Groups_Api_PayoutRecipientRequest),
   })
-  .partial();
+  ;
 const Roblox_Groups_Api_GroupRelationshipsResponse = z
   .object({
     groupId: z.number().int(),
@@ -185,21 +185,21 @@ const Roblox_Groups_Api_GroupRelationshipsResponse = z
     relatedGroups: z.array(Roblox_Groups_Api_GroupDetailResponse),
     nextRowIndex: z.number().int(),
   })
-  .partial();
-const Roblox_Groups_Api_RelationshipsRequest = z.object({ GroupIds: z.array(z.number()) }).partial();
+  ;
+const Roblox_Groups_Api_RelationshipsRequest = z.object({ GroupIds: z.array(z.number()) });
 const Roblox_Groups_Api_GroupAllRolesResponse = z
   .object({
     groupId: z.number().int(),
     roles: z.array(Roblox_Groups_Api_GroupRoleResponse),
   })
-  .partial();
+  ;
 const Roblox_Groups_Api_GroupPermissionsResponse = z
   .object({
     groupId: z.number().int(),
     role: Roblox_Groups_Api_GroupRoleResponse,
     permissions: Roblox_Groups_Api_GroupPermissionsModel,
   })
-  .partial();
+  ;
 const Roblox_Groups_Api_UpdatePermissionsRequest = z
   .object({
     permissions: z
@@ -227,17 +227,17 @@ const Roblox_Groups_Api_UpdatePermissionsRequest = z
       })
       .partial(),
   })
-  .partial();
+  ;
 const Roblox_Web_WebAPI_Models_ApiPageResponse_Roblox_Groups_Api_Models_Response_UserModel_ = z
   .object({
     previousPageCursor: z.string(),
     nextPageCursor: z.string(),
     data: z.array(Roblox_Groups_Api_Models_Response_UserModel),
   })
-  .partial();
+  ;
 const Roblox_Web_WebAPI_Models_ApiArrayResponse_Roblox_Groups_Api_GroupPermissionsResponse_ = z
   .object({ data: z.array(Roblox_Groups_Api_GroupPermissionsResponse) })
-  .partial();
+  ;
 const Roblox_Groups_Api_GroupSettingsResponse = z
   .object({
     isApprovalRequired: z.boolean(),
@@ -247,7 +247,7 @@ const Roblox_Groups_Api_GroupSettingsResponse = z
     areGroupGamesVisible: z.boolean(),
     isGroupNameChangeEnabled: z.boolean(),
   })
-  .partial();
+  ;
 const Roblox_Groups_Api_UpdateGroupSettingsRequest = z
   .object({
     isApprovalRequired: z.boolean(),
@@ -255,7 +255,7 @@ const Roblox_Groups_Api_UpdateGroupSettingsRequest = z
     areGroupFundsVisible: z.boolean(),
     areGroupGamesVisible: z.boolean(),
   })
-  .partial();
+  ;
 const Roblox_Groups_Api_SocialLinkResponse = z
   .object({
     id: z.number().int(),
@@ -273,10 +273,10 @@ const Roblox_Groups_Api_SocialLinkResponse = z
     url: z.string(),
     title: z.string(),
   })
-  .partial();
+  ;
 const Roblox_Web_WebAPI_Models_ApiArrayResponse_Roblox_Groups_Api_SocialLinkResponse_ = z
   .object({ data: z.array(Roblox_Groups_Api_SocialLinkResponse) })
-  .partial();
+  ;
 const Roblox_Groups_Api_SocialLinkRequest = z
   .object({
     type: z.union([
@@ -293,14 +293,14 @@ const Roblox_Groups_Api_SocialLinkRequest = z
     url: z.string(),
     title: z.string(),
   })
-  .partial();
+  ;
 const Roblox_Web_WebAPI_Models_ApiPageResponse_Roblox_Groups_Api_UserGroupRoleResponse_ = z
   .object({
     previousPageCursor: z.string(),
     nextPageCursor: z.string(),
     data: z.array(Roblox_Groups_Api_UserGroupRoleResponse),
   })
-  .partial();
+  ;
 const Roblox_Groups_Api_JoinGroupRequest = z
   .object({
     sessionId: z.string(),
@@ -310,7 +310,7 @@ const Roblox_Groups_Api_JoinGroupRequest = z
     captchaProvider: z.string(),
     challengeId: z.string(),
   })
-  .partial();
+  ;
 const Roblox_Groups_Api_Models_Response_GroupWallPostModel = z
   .object({
     id: z.number().int(),
@@ -319,14 +319,14 @@ const Roblox_Groups_Api_Models_Response_GroupWallPostModel = z
     created: z.string().datetime(),
     updated: z.string().datetime(),
   })
-  .partial();
+  ;
 const Roblox_Web_WebAPI_Models_ApiPageResponse_Roblox_Groups_Api_Models_Response_GroupWallPostModel_ = z
   .object({
     previousPageCursor: z.string(),
     nextPageCursor: z.string(),
     data: z.array(Roblox_Groups_Api_Models_Response_GroupWallPostModel),
   })
-  .partial();
+  ;
 const Roblox_Groups_Api_CreateWallPostRequest = z
   .object({
     body: z.string(),
@@ -335,7 +335,7 @@ const Roblox_Groups_Api_CreateWallPostRequest = z
     captchaProvider: z.string(),
     challengeId: z.string(),
   })
-  .partial();
+  ;
 const Roblox_Groups_Api_GroupConfigurationResponse = z
   .object({
     nameMaxLength: z.number().int(),
@@ -344,10 +344,10 @@ const Roblox_Groups_Api_GroupConfigurationResponse = z
     cost: z.number().int(),
     isUsingTwoStepWebviewComponent: z.boolean(),
   })
-  .partial();
+  ;
 const Roblox_Groups_Api_RecurringPayoutsConfigurationResponse = z
   .object({ maxPayoutPartners: z.number().int() })
-  .partial();
+  ;
 const Roblox_Groups_Api_RoleConfigurationResponse = z
   .object({
     nameMaxLength: z.number().int(),
@@ -357,14 +357,14 @@ const Roblox_Groups_Api_RoleConfigurationResponse = z
     minRank: z.number().int(),
     maxRank: z.number().int(),
   })
-  .partial();
+  ;
 const Roblox_Groups_Api_GroupNameChangeConfigurationResponse = z
   .object({
     cost: z.number().int(),
     cooldownInDays: z.number().int(),
     ownershipCooldownInDays: z.number().int(),
   })
-  .partial();
+  ;
 const Roblox_Groups_Api_GroupConfigurationDisplayOptionsResponse = z
   .object({
     groupConfiguration: Roblox_Groups_Api_GroupConfigurationResponse,
@@ -374,7 +374,7 @@ const Roblox_Groups_Api_GroupConfigurationDisplayOptionsResponse = z
     isPremiumPayoutsEnabled: z.boolean(),
     isDefaultEmblemPolicyEnabled: z.boolean(),
   })
-  .partial();
+  ;
 const Roblox_Groups_Api_GroupsDisplayOptionsResponse = z
   .object({
     groupLimit: z.number().int(),
@@ -387,7 +387,7 @@ const Roblox_Groups_Api_GroupsDisplayOptionsResponse = z
     isGroupDetailsPolicyEnabled: z.boolean(),
     showPreviousGroupNames: z.boolean(),
   })
-  .partial();
+  ;
 const Roblox_Groups_Api_GroupSearchResponseItem = z
   .object({
     id: z.number().int(),
@@ -400,7 +400,7 @@ const Roblox_Groups_Api_GroupSearchResponseItem = z
     updated: z.string().datetime(),
     hasVerifiedBadge: z.boolean(),
   })
-  .partial();
+  ;
 const Roblox_Groups_Api_GroupSearchPageResponse = z
   .object({
     keyword: z.string(),
@@ -408,7 +408,7 @@ const Roblox_Groups_Api_GroupSearchPageResponse = z
     nextPageCursor: z.string(),
     data: z.array(Roblox_Groups_Api_GroupSearchResponseItem),
   })
-  .partial();
+  ;
 const Roblox_Web_Responses_Groups_GroupBasicResponse = z
   .object({
     id: z.number().int(),
@@ -416,16 +416,16 @@ const Roblox_Web_Responses_Groups_GroupBasicResponse = z
     memberCount: z.number().int(),
     hasVerifiedBadge: z.boolean(),
   })
-  .partial();
+  ;
 const Roblox_Web_WebAPI_Models_ApiArrayResponse_Roblox_Web_Responses_Groups_GroupBasicResponse_ = z
   .object({ data: z.array(Roblox_Web_Responses_Groups_GroupBasicResponse) })
-  .partial();
+  ;
 const Roblox_Groups_Api_GroupSearchMetadataResponse = z
   .object({
     SuggestedGroupKeywords: z.array(z.string()),
     ShowFriendsGroupsSort: z.boolean(),
   })
-  .partial();
+  ;
 const Roblox_Groups_Api_GroupRoleDetailResponse = z
   .object({
     groupId: z.number().int(),
@@ -435,33 +435,33 @@ const Roblox_Groups_Api_GroupRoleDetailResponse = z
     rank: z.number().int(),
     memberCount: z.number().int(),
   })
-  .partial();
+  ;
 const Roblox_Web_WebAPI_Models_ApiArrayResponse_Roblox_Groups_Api_GroupRoleDetailResponse_ = z
   .object({ data: z.array(Roblox_Groups_Api_GroupRoleDetailResponse) })
-  .partial();
+  ;
 const Roblox_Web_WebAPI_Models_ApiArrayResponse_Roblox_Groups_Api_GroupDetailResponse_ = z
   .object({ data: z.array(Roblox_Groups_Api_GroupDetailResponse) })
-  .partial();
+  ;
 const Roblox_Groups_Api_GroupMembershipDetailResponse = z
   .object({
     group: Roblox_Groups_Api_GroupDetailResponse,
     role: Roblox_Groups_Api_GroupRoleResponse,
     isPrimaryGroup: z.boolean(),
   })
-  .partial();
+  ;
 const Roblox_Groups_Api_UserGroupMembershipResponse = z
   .object({
     user: Roblox_Groups_Api_Models_Response_UserModel,
     groups: z.array(Roblox_Groups_Api_GroupMembershipDetailResponse),
   })
-  .partial();
+  ;
 const Roblox_Web_WebAPI_Models_ApiArrayResponse_Roblox_Groups_Api_UserGroupMembershipResponse_ = z
   .object({ data: z.array(Roblox_Groups_Api_UserGroupMembershipResponse) })
-  .partial();
+  ;
 const Roblox_Web_WebAPI_Models_ApiArrayResponse_Roblox_Groups_Api_GroupMembershipDetailResponse_ = z
   .object({ data: z.array(Roblox_Groups_Api_GroupMembershipDetailResponse) })
-  .partial();
-const Roblox_Groups_Api_ChangeOwnerRequest = z.object({ userId: z.number().int() }).partial();
+  ;
+const Roblox_Groups_Api_ChangeOwnerRequest = z.object({ userId: z.number().int() });
 const Roblox_Groups_Api_Models_Request_CreateRoleSetRequest = z
   .object({
     name: z.string(),
@@ -469,7 +469,7 @@ const Roblox_Groups_Api_Models_Request_CreateRoleSetRequest = z
     rank: z.number().int(),
     usingGroupFunds: z.boolean(),
   })
-  .partial();
+  ;
 const postV1groupscreate_Body = z
   .object({
     name: z.string(),
@@ -478,10 +478,10 @@ const postV1groupscreate_Body = z
     buildersClubMembersOnly: z.boolean(),
     Files: z.unknown(),
   })
-  .partial();
+  ;
 const Roblox_Web_Responses_RelatedEntityTypeResponse_Roblox_Web_Responses_Groups_GroupOwnerType_ = z
   .object({ id: z.number().int(), type: z.literal(0), name: z.string() })
-  .partial();
+  ;
 const Roblox_Web_Responses_Groups_GroupResponseV2 = z
   .object({
     id: z.number().int(),
@@ -492,24 +492,24 @@ const Roblox_Web_Responses_Groups_GroupResponseV2 = z
     created: z.string().datetime(),
     hasVerifiedBadge: z.boolean(),
   })
-  .partial();
-const Roblox_Groups_Api_GroupPolicyRequest = z.object({ groupIds: z.array(z.number()) }).partial();
+  ;
+const Roblox_Groups_Api_GroupPolicyRequest = z.object({ groupIds: z.array(z.number()) });
 const Roblox_Groups_Api_GroupPolicyResponse = z
   .object({ canViewGroup: z.boolean(), groupId: z.number().int() })
-  .partial();
+  ;
 const Roblox_Groups_Api_GroupPoliciesResponse = z
   .object({ groups: z.array(Roblox_Groups_Api_GroupPolicyResponse) })
-  .partial();
-const Roblox_Groups_Api_PrimaryGroupRequest = z.object({ groupId: z.number().int() }).partial();
-const Roblox_Groups_Api_UpdateGroupDescriptionRequest = z.object({ description: z.string() }).partial();
-const Roblox_Groups_Api_GroupDescriptionResponse = z.object({ newDescription: z.string() }).partial();
-const Roblox_Groups_Api_UpdateGroupNameRequest = z.object({ name: z.string() }).partial();
-const Roblox_Groups_Api_UpdateGroupNameResponse = z.object({ newName: z.string() }).partial();
+  ;
+const Roblox_Groups_Api_PrimaryGroupRequest = z.object({ groupId: z.number().int() });
+const Roblox_Groups_Api_UpdateGroupDescriptionRequest = z.object({ description: z.string() });
+const Roblox_Groups_Api_GroupDescriptionResponse = z.object({ newDescription: z.string() });
+const Roblox_Groups_Api_UpdateGroupNameRequest = z.object({ name: z.string() });
+const Roblox_Groups_Api_UpdateGroupNameResponse = z.object({ newName: z.string() });
 const Roblox_Groups_Api_Models_Request_UpdateRoleSetRequest = z
   .object({ name: z.string(), description: z.string(), rank: z.number().int() })
-  .partial();
-const Roblox_Groups_Api_PostGroupStatusRequest = z.object({ message: z.string() }).partial();
-const Roblox_Groups_Api_UpdateUserRoleRequest = z.object({ roleId: z.number().int() }).partial();
+  ;
+const Roblox_Groups_Api_PostGroupStatusRequest = z.object({ message: z.string() });
+const Roblox_Groups_Api_UpdateUserRoleRequest = z.object({ roleId: z.number().int() });
 
 const schemas = {
   Roblox_Groups_Api_Models_Response_UserModel,

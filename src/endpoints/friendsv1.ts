@@ -9,8 +9,8 @@ const Roblox_Friends_Api_Models_Response_FriendsPageMetadataResponse = z
     userName: z.string(),
     displayName: z.string(),
   })
-  .partial();
-const Roblox_Friends_Api_FriendsCountResponse = z.object({ count: z.number().int() }).partial();
+  ;
+const Roblox_Friends_Api_FriendsCountResponse = z.object({ count: z.number().int() });
 const Roblox_Friends_Api_FriendRequest = z
   .object({
     sentAt: z.string().datetime(),
@@ -30,7 +30,7 @@ const Roblox_Friends_Api_FriendRequest = z
     ]),
     contactName: z.string(),
   })
-  .partial();
+  ;
 const Roblox_Friends_Api_FriendRequestResponse = z
   .object({
     friendRequest: Roblox_Friends_Api_FriendRequest,
@@ -44,14 +44,14 @@ const Roblox_Friends_Api_FriendRequestResponse = z
     name: z.string(),
     displayName: z.string(),
   })
-  .partial();
+  ;
 const Roblox_Web_WebAPI_Models_ApiPageResponse_Roblox_Friends_Api_FriendRequestResponse_ = z
   .object({
     previousPageCursor: z.string(),
     nextPageCursor: z.string(),
     data: z.array(Roblox_Friends_Api_FriendRequestResponse),
   })
-  .partial();
+  ;
 const Roblox_Friends_Api_Models_Response_UserRecommendation = z
   .object({
     userId: z.number().int(),
@@ -59,13 +59,13 @@ const Roblox_Friends_Api_Models_Response_UserRecommendation = z
     userProfilePageUrl: z.string(),
     userPresenceType: z.union([z.literal(0), z.literal(1), z.literal(2), z.literal(3)]),
   })
-  .partial();
+  ;
 const Roblox_Friends_Api_Models_Response_UserRecommendationsResponse = z
   .object({
     recommendedUsers: z.array(Roblox_Friends_Api_Models_Response_UserRecommendation),
   })
-  .partial();
-const Roblox_Friends_Api_PendingFriendRequestCountModel = z.object({ count: z.number().int() }).partial();
+  ;
+const Roblox_Friends_Api_PendingFriendRequestCountModel = z.object({ count: z.number().int() });
 const Roblox_Friends_Api_Models_Response_UserResponse = z
   .object({
     isOnline: z.boolean(),
@@ -82,18 +82,18 @@ const Roblox_Friends_Api_Models_Response_UserResponse = z
     name: z.string(),
     displayName: z.string(),
   })
-  .partial();
+  ;
 const Roblox_Web_WebAPI_Models_ApiPageResponse_Roblox_Friends_Api_Models_Response_UserResponse_ = z
   .object({
     previousPageCursor: z.string(),
     nextPageCursor: z.string(),
     data: z.array(Roblox_Friends_Api_Models_Response_UserResponse),
   })
-  .partial();
-const Roblox_Friends_Api_FollowCountResponse = z.object({ count: z.number().int() }).partial();
+  ;
+const Roblox_Friends_Api_FollowCountResponse = z.object({ count: z.number().int() });
 const Roblox_Web_WebAPI_Models_ApiArrayResponse_Roblox_Friends_Api_Models_Response_UserResponse_ = z
   .object({ data: z.array(Roblox_Friends_Api_Models_Response_UserResponse) })
-  .partial();
+  ;
 const Roblox_Friends_Api_Models_Response_UserPresenceResponseModel = z
   .object({
     UserPresenceType: z.string(),
@@ -105,7 +105,7 @@ const Roblox_Friends_Api_Models_Response_UserPresenceResponseModel = z
     universeId: z.number().int(),
     lastOnline: z.string().datetime(),
   })
-  .partial();
+  ;
 const Roblox_Friends_Api_Models_Response_UserPresenceResponse = z
   .object({
     userPresence: Roblox_Friends_Api_Models_Response_UserPresenceResponseModel,
@@ -113,39 +113,39 @@ const Roblox_Friends_Api_Models_Response_UserPresenceResponse = z
     name: z.string(),
     displayName: z.string(),
   })
-  .partial();
+  ;
 const Roblox_Web_WebAPI_Models_ApiArrayResponse_Roblox_Friends_Api_Models_Response_UserPresenceResponse_ = z
   .object({
     data: z.array(Roblox_Friends_Api_Models_Response_UserPresenceResponse),
   })
-  .partial();
+  ;
 const Roblox_Friends_Api_FriendStatusResponse = z
   .object({
     id: z.number().int(),
     status: z.union([z.literal(0), z.literal(1), z.literal(2), z.literal(3)]),
   })
-  .partial();
+  ;
 const Roblox_Web_WebAPI_Models_ApiArrayResponse_Roblox_Friends_Api_FriendStatusResponse_ = z
   .object({ data: z.array(Roblox_Friends_Api_FriendStatusResponse) })
-  .partial();
+  ;
 const Roblox_Friends_Api_CaptchaStatusResponseModel = z
   .object({ success: z.boolean(), isCaptchaRequired: z.boolean() })
-  .partial();
-const Roblox_Friends_Api_FollowingExistsRequestModel = z.object({ targetUserIds: z.array(z.number()) }).partial();
+  ;
+const Roblox_Friends_Api_FollowingExistsRequestModel = z.object({ targetUserIds: z.array(z.number()) });
 const Roblox_Friends_Api_Models_Response_FollowingExistsResponse = z
   .object({
     isFollowing: z.boolean(),
     isFollowed: z.boolean(),
     userId: z.number().int(),
   })
-  .partial();
+  ;
 const Roblox_Friends_Api_Models_Response_FollowingExistsResponseModel = z
   .object({
     followings: z.array(Roblox_Friends_Api_Models_Response_FollowingExistsResponse),
   })
-  .partial();
-const Roblox_Web_WebAPI_ApiEmptyResponseModel = z.object({}).partial();
-const Roblox_Friends_Api_Models_Request_FriendingTokenRequestModel = z.object({ friendingToken: z.string() }).partial();
+  ;
+const Roblox_Web_WebAPI_ApiEmptyResponseModel = z.object({});
+const Roblox_Friends_Api_Models_Request_FriendingTokenRequestModel = z.object({ friendingToken: z.string() });
 const Roblox_Web_Captcha_Models_Request_CaptchaTokenRequest = z
   .object({
     captchaId: z.string(),
@@ -153,14 +153,14 @@ const Roblox_Web_Captcha_Models_Request_CaptchaTokenRequest = z
     captchaProvider: z.string(),
     challengeId: z.string(),
   })
-  .partial();
+  ;
 const Roblox_Friends_Api_RecountResponse = z
   .object({
     existingCount: z.number().int(),
     computedCount: z.number().int(),
     updated: z.boolean(),
   })
-  .partial();
+  ;
 const Roblox_Friends_Api_FriendshipRequestModel = z
   .object({
     friendshipOriginSourceType: z.union([
@@ -176,7 +176,7 @@ const Roblox_Friends_Api_FriendshipRequestModel = z
       z.literal(9),
     ]),
   })
-  .partial();
+  ;
 
 const schemas = {
   Roblox_Friends_Api_Models_Response_FriendsPageMetadataResponse,

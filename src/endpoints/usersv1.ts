@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-const Roblox_Web_WebAPI_ApiEmptyResponseModel = z.object({}).partial();
+const Roblox_Web_WebAPI_ApiEmptyResponseModel = z.object({});
 const Roblox_Users_Api_GetUserResponse = z
   .object({
     description: z.string(),
@@ -12,21 +12,21 @@ const Roblox_Users_Api_GetUserResponse = z
     name: z.string(),
     displayName: z.string(),
   })
-  .partial();
-const Roblox_Users_Api_UsernameHistoryResponse = z.object({ name: z.string() }).partial();
+  ;
+const Roblox_Users_Api_UsernameHistoryResponse = z.object({ name: z.string() });
 const Roblox_Web_WebAPI_Models_ApiPageResponse_Roblox_Users_Api_UsernameHistoryResponse_ = z
   .object({
     previousPageCursor: z.string(),
     nextPageCursor: z.string(),
     data: z.array(Roblox_Users_Api_UsernameHistoryResponse),
   })
-  .partial();
+  ;
 const Roblox_Users_Api_AuthenticatedUserResponse = z
   .object({ id: z.number().int(), name: z.string(), displayName: z.string() })
-  .partial();
-const Roblox_Users_Api_UserAgeBracketResponse = z.object({ ageBracket: z.number().int() }).partial();
-const Roblox_Users_Api_UserCountryCodeResponse = z.object({ countryCode: z.string() }).partial();
-const Roblox_Users_Api_UserRolesResponse = z.object({ roles: z.array(z.string()) }).partial();
+  ;
+const Roblox_Users_Api_UserAgeBracketResponse = z.object({ ageBracket: z.number().int() });
+const Roblox_Users_Api_UserCountryCodeResponse = z.object({ countryCode: z.string() });
+const Roblox_Users_Api_UserRolesResponse = z.object({ roles: z.array(z.string()) });
 const Roblox_Users_Api_UserSearchResponse = z
   .object({
     previousUsernames: z.array(z.string()),
@@ -35,17 +35,17 @@ const Roblox_Users_Api_UserSearchResponse = z
     name: z.string(),
     displayName: z.string(),
   })
-  .partial();
+  ;
 const Roblox_Web_WebAPI_Models_ApiPageResponse_Roblox_Users_Api_UserSearchResponse_ = z
   .object({
     previousPageCursor: z.string(),
     nextPageCursor: z.string(),
     data: z.array(Roblox_Users_Api_UserSearchResponse),
   })
-  .partial();
+  ;
 const Roblox_Users_Api_MultiGetByUsernameRequest = z
   .object({ usernames: z.array(z.string()), excludeBannedUsers: z.boolean() })
-  .partial();
+  ;
 const Roblox_Users_Api_MultiGetUserByNameResponse = z
   .object({
     requestedUsername: z.string(),
@@ -54,13 +54,13 @@ const Roblox_Users_Api_MultiGetUserByNameResponse = z
     name: z.string(),
     displayName: z.string(),
   })
-  .partial();
+  ;
 const Roblox_Web_WebAPI_Models_ApiArrayResponse_Roblox_Users_Api_MultiGetUserByNameResponse_ = z
   .object({ data: z.array(Roblox_Users_Api_MultiGetUserByNameResponse) })
-  .partial();
+  ;
 const Roblox_Users_Api_MultiGetByUserIdRequest = z
   .object({ userIds: z.array(z.number()), excludeBannedUsers: z.boolean() })
-  .partial();
+  ;
 const Roblox_Users_Api_VerifiedBadgeUserResponse = z
   .object({
     hasVerifiedBadge: z.boolean(),
@@ -68,11 +68,11 @@ const Roblox_Users_Api_VerifiedBadgeUserResponse = z
     name: z.string(),
     displayName: z.string(),
   })
-  .partial();
+  ;
 const Roblox_Web_WebAPI_Models_ApiArrayResponse_Roblox_Users_Api_VerifiedBadgeUserResponse_ = z
   .object({ data: z.array(Roblox_Users_Api_VerifiedBadgeUserResponse) })
-  .partial();
-const Roblox_Users_Api_SetDisplayNameRequest = z.object({ newDisplayName: z.string() }).partial();
+  ;
+const Roblox_Users_Api_SetDisplayNameRequest = z.object({ newDisplayName: z.string() });
 
 const schemas = {
   Roblox_Web_WebAPI_ApiEmptyResponseModel,

@@ -1,13 +1,13 @@
 import { z } from 'zod';
 
-const Roblox_Api_Avatar_Models_AssetTypeModel = z.object({ id: z.number().int(), name: z.string() }).partial();
+const Roblox_Api_Avatar_Models_AssetTypeModel = z.object({ id: z.number().int(), name: z.string() });
 const Roblox_Api_Avatar_Models_AssetMetaModelV1 = z
   .object({
     order: z.number().int(),
     puffiness: z.number(),
     version: z.number().int(),
   })
-  .partial();
+  ;
 const Roblox_Api_Avatar_Models_AssetModelV2 = z
   .object({
     id: z.number().int(),
@@ -16,7 +16,7 @@ const Roblox_Api_Avatar_Models_AssetModelV2 = z
     currentVersionId: z.number().int(),
     meta: Roblox_Api_Avatar_Models_AssetMetaModelV1,
   })
-  .partial();
+  ;
 const Roblox_Api_Avatar_Models_BodyColors3Model = z
   .object({
     headColor3: z.string(),
@@ -26,7 +26,7 @@ const Roblox_Api_Avatar_Models_BodyColors3Model = z
     rightLegColor3: z.string(),
     leftLegColor3: z.string(),
   })
-  .partial();
+  ;
 const Roblox_Web_Responses_Avatar_ScaleModel = z
   .object({
     height: z.number(),
@@ -36,7 +36,7 @@ const Roblox_Web_Responses_Avatar_ScaleModel = z
     proportion: z.number(),
     bodyType: z.number(),
   })
-  .partial();
+  ;
 const Roblox_Api_Avatar_Models_OutfitDetailsModelV2 = z
   .object({
     id: z.number().int(),
@@ -48,7 +48,7 @@ const Roblox_Api_Avatar_Models_OutfitDetailsModelV2 = z
     outfitType: z.string(),
     isEditable: z.boolean(),
   })
-  .partial();
+  ;
 const Roblox_Platform_Avatar_BodyColorsModelV2 = z
   .object({
     headColor3: z.string(),
@@ -58,13 +58,13 @@ const Roblox_Platform_Avatar_BodyColorsModelV2 = z
     rightLegColor3: z.string(),
     leftLegColor3: z.string(),
   })
-  .partial();
+  ;
 const Roblox_Api_Avatar_Models_AssetWearModel = z
   .object({
     id: z.number().int(),
     meta: Roblox_Api_Avatar_Models_AssetMetaModelV1,
   })
-  .partial();
+  ;
 const Roblox_Api_Avatar_Models_OutfitUpdateModelV3 = z
   .object({
     name: z.string(),
@@ -74,11 +74,11 @@ const Roblox_Api_Avatar_Models_OutfitUpdateModelV3 = z
     playerAvatarType: z.string(),
     outfitType: z.union([z.literal(0), z.literal(1), z.literal(2)]),
   })
-  .partial();
-const Roblox_Web_WebAPI_ApiEmptyResponseModel = z.object({}).partial();
+  ;
+const Roblox_Web_WebAPI_ApiEmptyResponseModel = z.object({});
 const Roblox_Api_Avatar_Models_OutfitModel = z
   .object({ id: z.number().int(), name: z.string(), isEditable: z.boolean() })
-  .partial();
+  ;
 
 const schemas = {
   Roblox_Api_Avatar_Models_AssetTypeModel,

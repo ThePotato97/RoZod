@@ -7,7 +7,7 @@ const Roblox_Catalog_Api_BundleItemDetailModel = z
     name: z.string(),
     type: z.string(),
   })
-  .partial();
+  ;
 const Roblox_Catalog_Api_BundleCreatorModel = z
   .object({
     id: z.number().int(),
@@ -15,13 +15,13 @@ const Roblox_Catalog_Api_BundleCreatorModel = z
     type: z.string(),
     hasVerifiedBadge: z.boolean(),
   })
-  .partial();
+  ;
 const Roblox_Catalog_Api_PremiumPricingModel = z
   .object({
     premiumDiscountPercentage: z.number().int(),
     premiumPriceInRobux: z.number().int(),
   })
-  .partial();
+  ;
 const Roblox_Catalog_Api_BundleProductModel = z
   .object({
     id: z.number().int(),
@@ -33,7 +33,7 @@ const Roblox_Catalog_Api_BundleProductModel = z
     noPriceText: z.string(),
     premiumPricing: Roblox_Catalog_Api_PremiumPricingModel,
   })
-  .partial();
+  ;
 const Roblox_Catalog_Api_BundleDetailsModel = z
   .object({
     id: z.number().int(),
@@ -57,38 +57,38 @@ const Roblox_Catalog_Api_BundleDetailsModel = z
       ]),
     ),
   })
-  .partial();
+  ;
 const Roblox_Web_WebAPI_Models_ApiPageResponse_Roblox_Catalog_Api_BundleDetailsModel_ = z
   .object({
     previousPageCursor: z.string(),
     nextPageCursor: z.string(),
     data: z.array(Roblox_Catalog_Api_BundleDetailsModel),
   })
-  .partial();
+  ;
 const Roblox_Web_WebAPI_Models_ApiArrayResponse_Roblox_Catalog_Api_BundleDetailsModel_ = z
   .object({ data: z.array(Roblox_Catalog_Api_BundleDetailsModel) })
-  .partial();
-const Roblox_Web_WebAPI_ApiEmptyResponseModel = z.object({}).partial();
+  ;
+const Roblox_Web_WebAPI_ApiEmptyResponseModel = z.object({});
 const Roblox_Catalog_Api_AssetFavoriteModel = z
   .object({
     assetId: z.number().int(),
     userId: z.number().int(),
     created: z.string().datetime(),
   })
-  .partial();
+  ;
 const Roblox_Catalog_Api_BundleFavoriteModel = z
   .object({
     bundleId: z.number().int(),
     userId: z.number().int(),
     created: z.string().datetime(),
   })
-  .partial();
+  ;
 const Roblox_Catalog_Api_FavoriteBundlesResponse = z
   .object({
     favorites: z.array(Roblox_Catalog_Api_BundleDetailsModel),
     moreFavorites: z.boolean(),
   })
-  .partial();
+  ;
 const Roblox_Catalog_Api_OwnedBundleModel = z
   .object({
     id: z.number().int(),
@@ -96,23 +96,23 @@ const Roblox_Catalog_Api_OwnedBundleModel = z
     bundleType: z.string(),
     creator: Roblox_Catalog_Api_BundleCreatorModel,
   })
-  .partial();
+  ;
 const Roblox_Web_WebAPI_Models_ApiPageResponse_Roblox_Catalog_Api_OwnedBundleModel_ = z
   .object({
     previousPageCursor: z.string(),
     nextPageCursor: z.string(),
     data: z.array(Roblox_Catalog_Api_OwnedBundleModel),
   })
-  .partial();
+  ;
 const Roblox_Catalog_Api_MultigetItemDetailsRequestItem = z
   .object({
     itemType: z.union([z.literal(1), z.literal(2)]),
     id: z.number().int(),
   })
-  .partial();
+  ;
 const Roblox_Catalog_Api_MultigetItemDetailsRequestModel = z
   .object({ items: z.array(Roblox_Catalog_Api_MultigetItemDetailsRequestItem) })
-  .partial();
+  ;
 const Roblox_Catalog_Api_CatalogSearchDetailedResponseItem = z
   .object({
     id: z.number().int(),
@@ -256,18 +256,18 @@ const Roblox_Catalog_Api_CatalogSearchDetailedResponseItem = z
     hasResellers: z.boolean(),
     isOffSale: z.boolean(),
   })
-  .partial();
+  ;
 const Roblox_Web_WebAPI_Models_ApiArrayResponse_Roblox_Catalog_Api_CatalogSearchDetailedResponseItem_ = z
   .object({
     data: z.array(Roblox_Catalog_Api_CatalogSearchDetailedResponseItem),
   })
-  .partial();
+  ;
 const Roblox_Marketplacetopicdiscovery_Topicdiscoveryservice_V1Beta1_AvatarItem = z
   .object({
     TargetId: z.number().int(),
     ItemType: z.union([z.literal(0), z.literal(1), z.literal(2)]),
   })
-  .partial();
+  ;
 const Roblox_Catalog_Api_Topics_TopicRequestModel = z
   .object({
     items: z.array(Roblox_Marketplacetopicdiscovery_Topicdiscoveryservice_V1Beta1_AvatarItem),
@@ -276,19 +276,19 @@ const Roblox_Catalog_Api_Topics_TopicRequestModel = z
     maxResult: z.number().int(),
     genderType: z.union([z.literal(1), z.literal(2), z.literal(3)]),
   })
-  .partial();
+  ;
 const Roblox_Catalog_Api_Topics_TopicModel = z
   .object({ displayName: z.string(), originalTopicName: z.string() })
-  .partial();
+  ;
 const Roblox_Marketplacetopicdiscovery_Topicdiscoveryservice_V1Beta1_Error = z
   .object({ Message: z.string(), Code: z.number().int() })
-  .partial();
+  ;
 const Roblox_Catalog_Api_Topics_TopicResponse = z
   .object({
     topics: z.array(Roblox_Catalog_Api_Topics_TopicModel),
     error: Roblox_Marketplacetopicdiscovery_Topicdiscoveryservice_V1Beta1_Error,
   })
-  .partial();
+  ;
 
 const schemas = {
   Roblox_Catalog_Api_BundleItemDetailModel,

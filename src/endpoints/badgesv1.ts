@@ -6,14 +6,14 @@ const Roblox_Web_Responses_Badges_BadgeAwardStatisticsResponse = z
     awardedCount: z.number().int(),
     winRatePercentage: z.number(),
   })
-  .partial();
+  ;
 const Roblox_Badges_Api_UniverseResponse = z
   .object({
     id: z.number().int(),
     name: z.string(),
     rootPlaceId: z.number().int(),
   })
-  .partial();
+  ;
 const Roblox_Badges_Api_BadgeResponse = z
   .object({
     id: z.number().int(),
@@ -29,25 +29,25 @@ const Roblox_Badges_Api_BadgeResponse = z
     statistics: Roblox_Web_Responses_Badges_BadgeAwardStatisticsResponse,
     awardingUniverse: Roblox_Badges_Api_UniverseResponse,
   })
-  .partial();
+  ;
 const Roblox_Badges_Api_UpdateBadgeRequest = z
   .object({ name: z.string(), description: z.string(), enabled: z.boolean() })
-  .partial();
-const Roblox_Web_WebAPI_ApiEmptyResponseModel = z.object({}).partial();
+  ;
+const Roblox_Web_WebAPI_ApiEmptyResponseModel = z.object({});
 const Roblox_Badges_Api_BadgeMetadataResponse = z
   .object({
     badgeCreationPrice: z.number().int(),
     maxBadgeNameLength: z.number().int(),
     maxBadgeDescriptionLength: z.number().int(),
   })
-  .partial();
+  ;
 const Roblox_Web_WebAPI_Models_ApiPageResponse_Roblox_Badges_Api_BadgeResponse_ = z
   .object({
     previousPageCursor: z.string(),
     nextPageCursor: z.string(),
     data: z.array(Roblox_Badges_Api_BadgeResponse),
   })
-  .partial();
+  ;
 const postV1universesUniverseIdbadges_Body = z
   .object({
     name: z.string(),
@@ -56,10 +56,10 @@ const postV1universesUniverseIdbadges_Body = z
     files: z.instanceof(File),
     expectedCost: z.number().int(),
   })
-  .partial();
+  ;
 const Roblox_Web_Responses_RelatedEntityTypeResponse_Roblox_Platform_Badges_BadgeAwarderType_ = z
   .object({ id: z.number().int(), type: z.literal(1), name: z.string() })
-  .partial();
+  ;
 const Roblox_Web_Responses_Badges_BadgeResponseV2 = z
   .object({
     id: z.number().int(),
@@ -75,20 +75,20 @@ const Roblox_Web_Responses_Badges_BadgeResponseV2 = z
     created: z.string().datetime(),
     updated: z.string().datetime(),
   })
-  .partial();
+  ;
 const Roblox_Web_WebAPI_Models_ApiPageResponse_Roblox_Web_Responses_Badges_BadgeResponseV2_ = z
   .object({
     previousPageCursor: z.string(),
     nextPageCursor: z.string(),
     data: z.array(Roblox_Web_Responses_Badges_BadgeResponseV2),
   })
-  .partial();
+  ;
 const Roblox_Badges_Api_BadgeAwardResponse = z
   .object({ badgeId: z.number().int(), awardedDate: z.string().datetime() })
-  .partial();
+  ;
 const Roblox_Web_WebAPI_Models_ApiArrayResponse_Roblox_Badges_Api_BadgeAwardResponse_ = z
   .object({ data: z.array(Roblox_Badges_Api_BadgeAwardResponse) })
-  .partial();
+  ;
 
 const schemas = {
   Roblox_Web_Responses_Badges_BadgeAwardStatisticsResponse,

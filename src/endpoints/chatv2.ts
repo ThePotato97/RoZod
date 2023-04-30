@@ -6,7 +6,7 @@ const Roblox_Chat_Api_Models_ChatSettingsResponse = z
     isActiveChatUser: z.boolean(),
     isConnectTabEnabled: z.boolean(),
   })
-  .partial();
+  ;
 const Roblox_Chat_Api_Models_ChatParticipant = z
   .object({
     type: z.enum(['User', 'System']),
@@ -15,13 +15,13 @@ const Roblox_Chat_Api_Models_ChatParticipant = z
     displayName: z.string(),
     hasVerifiedBadge: z.boolean(),
   })
-  .partial();
+  ;
 const Roblox_Chat_Api_Models_ConversationTitle = z
   .object({ titleForViewer: z.string(), isDefaultTitle: z.boolean() })
-  .partial();
+  ;
 const Roblox_Chat_Api_Models_ConversationUniverse = z
   .object({ universeId: z.number().int(), rootPlaceId: z.number().int() })
-  .partial();
+  ;
 const Roblox_Chat_Api_Models_Conversation = z
   .object({
     id: z.number().int(),
@@ -34,20 +34,20 @@ const Roblox_Chat_Api_Models_Conversation = z
     lastUpdated: z.string().datetime(),
     conversationUniverse: Roblox_Chat_Api_Models_ConversationUniverse,
   })
-  .partial();
-const Roblox_Chat_Api_Models_GameLink = z.object({ universeId: z.number().int() }).partial();
+  ;
+const Roblox_Chat_Api_Models_GameLink = z.object({ universeId: z.number().int() });
 const Roblox_Chat_Api_Models_Link = z
   .object({ type: z.literal('Game'), game: Roblox_Chat_Api_Models_GameLink })
-  .partial();
+  ;
 const Roblox_Chat_Api_Models_SetConversationUniverseEventBased = z
   .object({ actorUserId: z.number().int(), universeId: z.number().int() })
-  .partial();
+  ;
 const Roblox_Chat_Api_Models_EventBased = z
   .object({
     type: z.literal('SetConversationUniverse'),
     setConversationUniverse: Roblox_Chat_Api_Models_SetConversationUniverseEventBased,
   })
-  .partial();
+  ;
 const Roblox_Chat_Api_Models_ChatMessage = z
   .object({
     id: z.string().uuid(),
@@ -61,25 +61,25 @@ const Roblox_Chat_Api_Models_ChatMessage = z
     link: Roblox_Chat_Api_Models_Link,
     eventBased: Roblox_Chat_Api_Models_EventBased,
   })
-  .partial();
+  ;
 const Roblox_Chat_Api_Models_RolloutSettingModel = z
   .object({
     featureName: z.enum(['LuaChat', 'ConversationUniverse', 'PlayTogether', 'Party', 'GameLink', 'OldPlayTogether']),
     isRolloutEnabled: z.boolean(),
   })
-  .partial();
+  ;
 const Roblox_Chat_Api_Models_RolloutSettingsResponse = z
   .object({
     rolloutFeatures: z.array(Roblox_Chat_Api_Models_RolloutSettingModel),
   })
-  .partial();
-const Roblox_Chat_Api_Models_UnreadConversationCountResponse = z.object({ count: z.number().int() }).partial();
+  ;
+const Roblox_Chat_Api_Models_UnreadConversationCountResponse = z.object({ count: z.number().int() });
 const Roblox_Chat_Api_Models_MultigetConversationMessagesResponse = z
   .object({
     conversationId: z.number().int(),
     chatMessages: z.array(Roblox_Chat_Api_Models_ChatMessage),
   })
-  .partial();
+  ;
 const Roblox_Chat_Api_Models_ChatMetadataResponse = z
   .object({
     isChatEnabledByPrivacySetting: z.union([z.literal(0), z.literal(1), z.literal(2)]),
@@ -104,13 +104,13 @@ const Roblox_Chat_Api_Models_ChatMetadataResponse = z
     isPlayTogetherForGameCardsEnabled: z.boolean(),
     isRoactChatEnabled: z.boolean(),
   })
-  .partial();
+  ;
 const Roblox_Chat_Api_Models_AddUsersToConversationRequest = z
   .object({
     participantUserIds: z.array(z.number()),
     conversationId: z.number().int(),
   })
-  .partial();
+  ;
 const Roblox_Chat_Api_Models_RejectedChatParticipant = z
   .object({
     rejectedReason: z.string(),
@@ -120,7 +120,7 @@ const Roblox_Chat_Api_Models_RejectedChatParticipant = z
     displayName: z.string(),
     hasVerifiedBadge: z.boolean(),
   })
-  .partial();
+  ;
 const Roblox_Chat_Api_Models_AddUserToConversationResponse = z
   .object({
     conversationId: z.number().int(),
@@ -128,29 +128,29 @@ const Roblox_Chat_Api_Models_AddUserToConversationResponse = z
     resultType: z.literal('Success'),
     statusMessage: z.string(),
   })
-  .partial();
+  ;
 const Roblox_Chat_Api_Models_MarkAsReadRequest = z
   .object({ conversationId: z.number().int(), endMessageId: z.string() })
-  .partial();
-const Roblox_Chat_Api_Models_MarkAsReadResponse = z.object({ resultType: z.literal('Success') }).partial();
-const Roblox_Chat_Api_Models_MarkAsSeenRequest = z.object({ conversationsToMarkSeen: z.array(z.number()) }).partial();
-const Roblox_Chat_Api_Models_MarkAsSeenResponse = z.object({ resultType: z.literal('Success') }).partial();
+  ;
+const Roblox_Chat_Api_Models_MarkAsReadResponse = z.object({ resultType: z.literal('Success') });
+const Roblox_Chat_Api_Models_MarkAsSeenRequest = z.object({ conversationsToMarkSeen: z.array(z.number()) });
+const Roblox_Chat_Api_Models_MarkAsSeenResponse = z.object({ resultType: z.literal('Success') });
 const Roblox_Chat_Api_Models_RemoveUserFromConversationRequest = z
   .object({
     participantUserId: z.number().int(),
     conversationId: z.number().int(),
   })
-  .partial();
+  ;
 const Roblox_Chat_Api_Models_RemoveUserFromConversationResponse = z
   .object({
     conversationId: z.number().int(),
     resultType: z.literal('Success'),
     statusMessage: z.string(),
   })
-  .partial();
+  ;
 const Roblox_Chat_Api_Models_RenameGroupConversationRequest = z
   .object({ conversationId: z.number().int(), newTitle: z.string() })
-  .partial();
+  ;
 const Roblox_Chat_Api_Models_RenameConversationResponse = z
   .object({
     conversationTitle: z.string(),
@@ -158,11 +158,11 @@ const Roblox_Chat_Api_Models_RenameConversationResponse = z
     title: Roblox_Chat_Api_Models_ConversationTitle,
     statusMessage: z.string(),
   })
-  .partial();
+  ;
 const Roblox_Chat_Api_Models_ResetConversationUniverseRequest = z
   .object({ conversationId: z.number().int() })
-  .partial();
-const Roblox_Chat_Api_Models_UserVisibleStatusResponse = z.object({ statusMessage: z.string() }).partial();
+  ;
+const Roblox_Chat_Api_Models_UserVisibleStatusResponse = z.object({ statusMessage: z.string() });
 const Roblox_Chat_Api_Models_SendGameLinkChatMessageRequest = z
   .object({
     universeId: z.number().int(),
@@ -172,7 +172,7 @@ const Roblox_Chat_Api_Models_SendGameLinkChatMessageRequest = z
     conversationId: z.number().int(),
     decorators: z.array(z.string()),
   })
-  .partial();
+  ;
 const Roblox_Chat_Api_Models_SendLinkChatResponse = z
   .object({
     chatMessageLinkType: z.literal('Game'),
@@ -182,7 +182,7 @@ const Roblox_Chat_Api_Models_SendLinkChatResponse = z
     resultType: z.enum(['Success', 'Moderated', 'TextTooLong', 'NoRealtimeConnection']),
     statusMessage: z.string(),
   })
-  .partial();
+  ;
 const Roblox_Chat_Api_Models_SendPlainTextChatMessageRequest = z
   .object({
     message: z.string(),
@@ -191,7 +191,7 @@ const Roblox_Chat_Api_Models_SendPlainTextChatMessageRequest = z
     conversationId: z.number().int(),
     decorators: z.array(z.string()),
   })
-  .partial();
+  ;
 const Roblox_Chat_Api_Models_SendPlainTextChatMessageResponse = z
   .object({
     content: z.string(),
@@ -202,11 +202,11 @@ const Roblox_Chat_Api_Models_SendPlainTextChatMessageResponse = z
     resultType: z.enum(['Success', 'Moderated', 'TextTooLong', 'NoRealtimeConnection']),
     statusMessage: z.string(),
   })
-  .partial();
+  ;
 const Roblox_Chat_Api_Models_SetConversationUniverseRequest = z
   .object({ conversationId: z.number().int(), universeId: z.number().int() })
-  .partial();
-const Roblox_Chat_Api_Models_CreateCloudEditConversationRequest = z.object({ placeId: z.number().int() }).partial();
+  ;
+const Roblox_Chat_Api_Models_CreateCloudEditConversationRequest = z.object({ placeId: z.number().int() });
 const Roblox_Chat_Api_Models_StartNewConversationResponse = z
   .object({
     conversation: Roblox_Chat_Api_Models_Conversation,
@@ -214,16 +214,16 @@ const Roblox_Chat_Api_Models_StartNewConversationResponse = z
     resultType: z.literal('Success'),
     statusMessage: z.string(),
   })
-  .partial();
+  ;
 const Roblox_Chat_Api_Models_CreateGroupConversationRequest = z
   .object({ participantUserIds: z.array(z.number()), title: z.string() })
-  .partial();
+  ;
 const Roblox_Chat_Api_Models_CreateOneToOneConversationRequest = z
   .object({ participantUserId: z.number().int() })
-  .partial();
+  ;
 const Roblox_Chat_Api_Models_UpdateUserTypingStatusRequest = z
   .object({ conversationId: z.number().int(), isTyping: z.boolean() })
-  .partial();
+  ;
 
 const schemas = {
   Roblox_Chat_Api_Models_ChatSettingsResponse,

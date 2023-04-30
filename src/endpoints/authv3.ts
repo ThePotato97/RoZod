@@ -6,10 +6,10 @@ const Roblox_Authentication_Api_TwoStepVerificationLoginRequest = z
     verificationToken: z.string(),
     rememberDevice: z.boolean(),
   })
-  .partial();
+  ;
 const Roblox_Authentication_Api_Models_TwoStepVerificationV3LoginResponse = z
   .object({ identityVerificationLoginTicket: z.string() })
-  .partial();
+  ;
 
 const schemas = {
   Roblox_Authentication_Api_TwoStepVerificationLoginRequest,

@@ -10,12 +10,12 @@ const Roblox_Api_Develop_Models_Response_AssetVotingModel = z
     downVotes: z.number().int(),
     reasonForNotAbleToVote: z.string(),
   })
-  .partial();
+  ;
 const Roblox_Web_WebAPI_Models_ApiArrayResponse_Roblox_Api_Develop_Models_Response_AssetVotingModel_ = z
   .object({
     data: z.array(Roblox_Api_Develop_Models_Response_AssetVotingModel),
   })
-  .partial();
+  ;
 const Roblox_Api_Develop_Models_UniverseModel = z
   .object({
     id: z.number().int(),
@@ -31,17 +31,17 @@ const Roblox_Api_Develop_Models_UniverseModel = z
     created: z.string().datetime(),
     updated: z.string().datetime(),
   })
-  .partial();
+  ;
 const Roblox_Api_Develop_Models_GameTemplateModel = z
   .object({
     gameTemplateType: z.string(),
     hasTutorials: z.boolean(),
     universe: Roblox_Api_Develop_Models_UniverseModel,
   })
-  .partial();
+  ;
 const Roblox_Web_WebAPI_Models_ApiArrayResponse_Roblox_Api_Develop_Models_GameTemplateModel_ = z
   .object({ data: z.array(Roblox_Api_Develop_Models_GameTemplateModel) })
-  .partial();
+  ;
 const Roblox_Api_Develop_Models_GameUpdateMessageModel = z
   .object({
     universeId: z.number().int(),
@@ -56,29 +56,29 @@ const Roblox_Api_Develop_Models_GameUpdateMessageModel = z
     plays: z.number().int(),
     unfollows: z.number().int(),
   })
-  .partial();
+  ;
 const Roblox_Web_WebAPI_Models_ApiPageResponse_Roblox_Api_Develop_Models_UniverseModel_ = z
   .object({
     previousPageCursor: z.string(),
     nextPageCursor: z.string(),
     data: z.array(Roblox_Api_Develop_Models_UniverseModel),
   })
-  .partial();
+  ;
 const Roblox_Api_Develop_Models_PlaceCompatibilityModel = z
   .object({
     status: z.union([z.literal(0), z.literal(1), z.literal(2)]),
     platformName: z.string(),
     crashRatePercentage: z.number(),
   })
-  .partial();
+  ;
 const Roblox_Api_Develop_Models_Response_PlaceCompatibilitiesResponse = z
   .object({
     Compatibilities: z.array(Roblox_Api_Develop_Models_PlaceCompatibilityModel),
   })
-  .partial();
+  ;
 const Roblox_Api_Develop_Models_Response_StatisticsRange = z
   .object({ type: z.string(), data: z.record(z.number()) })
-  .partial();
+  ;
 const Roblox_Api_Develop_Models_StatisticsResponse = z
   .object({
     placeId: z.number().int(),
@@ -88,10 +88,10 @@ const Roblox_Api_Develop_Models_StatisticsResponse = z
     endTime: z.string().datetime(),
     data: z.record(Roblox_Api_Develop_Models_Response_StatisticsRange),
   })
-  .partial();
+  ;
 const Roblox_Api_Develop_Models_DeveloperProductRevenue = z
   .object({ developerProductName: z.string(), revenueAmount: z.number().int() })
-  .partial();
+  ;
 const Roblox_Api_Develop_Models_DeveloperProductAggregationResponse = z
   .object({
     allDevicesDeveloperProductRevenue: z.array(Roblox_Api_Develop_Models_DeveloperProductRevenue),
@@ -105,16 +105,16 @@ const Roblox_Api_Develop_Models_DeveloperProductAggregationResponse = z
       })
       .partial(),
   })
-  .partial();
+  ;
 const Roblox_Api_Develop_Models_Response_StatisticsAgeDataResponse = z
   .object({ isAgeDataAvailable: z.boolean() })
-  .partial();
+  ;
 const Roblox_Web_Responses_Users_SkinnyUserResponse = z
   .object({ id: z.number().int(), name: z.string(), displayName: z.string() })
-  .partial();
+  ;
 const Roblox_Web_WebAPI_Models_ApiArrayResponse_Roblox_Web_Responses_Users_SkinnyUserResponse_ = z
   .object({ data: z.array(Roblox_Web_Responses_Users_SkinnyUserResponse) })
-  .partial();
+  ;
 const Roblox_Web_Responses_Plugins_PluginResponse = z
   .object({
     id: z.number().int(),
@@ -125,16 +125,16 @@ const Roblox_Web_Responses_Plugins_PluginResponse = z
     created: z.string().datetime(),
     updated: z.string().datetime(),
   })
-  .partial();
+  ;
 const Roblox_Web_WebAPI_Models_ApiArrayResponse_Roblox_Web_Responses_Plugins_PluginResponse_ = z
   .object({ data: z.array(Roblox_Web_Responses_Plugins_PluginResponse) })
-  .partial();
+  ;
 const Roblox_Api_Develop_Models_DevStatsCreatorDashboardMetadataResponse = z
   .object({
     isPlayFabDataSourceChartsEnabled: z.boolean(),
     playFabDataSourceChartsAvailableByKPITypes: z.array(z.string()),
   })
-  .partial();
+  ;
 const Roblox_Api_Develop_Models_UniverseSettingsResponse = z
   .object({
     allowPrivateServers: z.boolean(),
@@ -172,7 +172,7 @@ const Roblox_Api_Develop_Models_UniverseSettingsResponse = z
     isStudioAccessToApisAllowed: z.boolean(),
     privacyType: z.string(),
   })
-  .partial();
+  ;
 const Roblox_Api_Develop_Models_UniverseSettingsRequest = z
   .object({
     name: z.string(),
@@ -205,7 +205,7 @@ const Roblox_Api_Develop_Models_UniverseSettingsRequest = z
     isForSale: z.boolean(),
     price: z.number().int(),
   })
-  .partial();
+  ;
 const Roblox_Api_Develop_Models_PrivateServerDetailsResponse = z
   .object({
     isEnabled: z.boolean(),
@@ -213,29 +213,29 @@ const Roblox_Api_Develop_Models_PrivateServerDetailsResponse = z
     activeServersCount: z.number().int(),
     activeSubscriptionsCount: z.number().int(),
   })
-  .partial();
+  ;
 const Roblox_Api_Develop_Models_LiveStatsResponseModel = z
   .object({
     totalPlayerCount: z.number().int(),
     playerCountsByDeviceType: z.record(z.number()),
     gameCount: z.number().int(),
   })
-  .partial();
+  ;
 const Roblox_Api_Develop_Models_UniversePermissionsModel = z
   .object({ canManage: z.boolean(), canCloudEdit: z.boolean() })
-  .partial();
-const Roblox_Api_Develop_Models_IPlaceModel = z.object({}).partial();
+  ;
+const Roblox_Api_Develop_Models_IPlaceModel = z.object({});
 const Roblox_Web_WebAPI_Models_ApiPageResponse_Roblox_Api_Develop_Models_IPlaceModel_ = z
   .object({
     previousPageCursor: z.string(),
     nextPageCursor: z.string(),
     data: z.array(Roblox_Api_Develop_Models_IPlaceModel),
   })
-  .partial();
-const Roblox_Api_Develop_Models_Response_TeamCreateSettingsResponse = z.object({ isEnabled: z.boolean() }).partial();
-const Roblox_Api_Develop_Models_UpdateTeamCreateSettingsRequest = z.object({ isEnabled: z.boolean() }).partial();
-const Roblox_Web_WebAPI_ApiEmptyResponseModel = z.object({}).partial();
-const Roblox_Api_Develop_Models_TeamCreateMembershipRequest = z.object({ userId: z.number().int() }).partial();
+  ;
+const Roblox_Api_Develop_Models_Response_TeamCreateSettingsResponse = z.object({ isEnabled: z.boolean() });
+const Roblox_Api_Develop_Models_UpdateTeamCreateSettingsRequest = z.object({ isEnabled: z.boolean() });
+const Roblox_Web_WebAPI_ApiEmptyResponseModel = z.object({});
+const Roblox_Api_Develop_Models_TeamCreateMembershipRequest = z.object({ userId: z.number().int() });
 const Roblox_Api_Develop_Models_UserResponse = z
   .object({
     buildersClubMembershipType: z.union([z.literal(0), z.literal(1), z.literal(2), z.literal(3), z.literal(4)]),
@@ -243,51 +243,51 @@ const Roblox_Api_Develop_Models_UserResponse = z
     username: z.string(),
     displayName: z.string(),
   })
-  .partial();
+  ;
 const Roblox_Web_WebAPI_Models_ApiPageResponse_Roblox_Api_Develop_Models_UserResponse_ = z
   .object({
     previousPageCursor: z.string(),
     nextPageCursor: z.string(),
     data: z.array(Roblox_Api_Develop_Models_UserResponse),
   })
-  .partial();
+  ;
 const Roblox_Web_WebAPI_Models_ApiArrayResponse_Roblox_Api_Develop_Models_UniverseModel_ = z
   .object({ data: z.array(Roblox_Api_Develop_Models_UniverseModel) })
-  .partial();
+  ;
 const Roblox_Api_Develop_Models_UniverseIdPermissionsModel = z
   .object({
     universeId: z.number().int(),
     canManage: z.boolean(),
     canCloudEdit: z.boolean(),
   })
-  .partial();
+  ;
 const Roblox_Web_WebAPI_Models_ApiArrayResponse_Roblox_Api_Develop_Models_UniverseIdPermissionsModel_ = z
   .object({
     data: z.array(Roblox_Api_Develop_Models_UniverseIdPermissionsModel),
   })
-  .partial();
+  ;
 const Roblox_Api_Develop_Models_UniverseTeamCreateSettingsModel = z
   .object({ id: z.number().int(), isEnabled: z.boolean() })
-  .partial();
+  ;
 const Roblox_Web_WebAPI_Models_ApiArrayResponse_Roblox_Api_Develop_Models_UniverseTeamCreateSettingsModel_ = z
   .object({
     data: z.array(Roblox_Api_Develop_Models_UniverseTeamCreateSettingsModel),
   })
-  .partial();
-const Roblox_Api_Develop_Models_GroupModel = z.object({ id: z.number().int(), name: z.string() }).partial();
+  ;
+const Roblox_Api_Develop_Models_GroupModel = z.object({ id: z.number().int(), name: z.string() });
 const Roblox_Web_WebAPI_Models_ApiArrayResponse_Roblox_Api_Develop_Models_GroupModel_ = z
   .object({ data: z.array(Roblox_Api_Develop_Models_GroupModel) })
-  .partial();
+  ;
 const Roblox_Api_Develop_Models_Response_GameUpdateTextFilterResponse = z
   .object({
     filteredGameUpdateText: z.string(),
     isFiltered: z.boolean(),
     moderationLevel: z.union([z.literal(1), z.literal(2), z.literal(3)]),
   })
-  .partial();
+  ;
 const Roblox_Api_Develop_Models_PlaceConfigurationModel = z
   .object({ name: z.string(), description: z.string() })
-  .partial();
+  ;
 const Roblox_Api_Develop_Models_PlaceModel = z
   .object({
     id: z.number().int(),
@@ -295,14 +295,14 @@ const Roblox_Api_Develop_Models_PlaceModel = z
     name: z.string(),
     description: z.string(),
   })
-  .partial();
+  ;
 const Roblox_Api_Develop_Models_AliasRequest = z
   .object({
     name: z.string(),
     type: z.union([z.literal(1), z.literal(2), z.literal(3)]),
     targetId: z.number().int(),
   })
-  .partial();
+  ;
 const Roblox_Api_Develop_DeveloperProductResponse = z
   .object({
     id: z.number().int(),
@@ -311,7 +311,7 @@ const Roblox_Api_Develop_DeveloperProductResponse = z
     shopId: z.number().int(),
     iconImageAssetId: z.number().int(),
   })
-  .partial();
+  ;
 const Roblox_Api_Develop_Models_DeveloperProductsUpdateModel = z
   .object({
     Name: z.string(),
@@ -319,14 +319,14 @@ const Roblox_Api_Develop_Models_DeveloperProductsUpdateModel = z
     IconImageAssetId: z.number().int(),
     PriceInRobux: z.number().int(),
   })
-  .partial();
+  ;
 const Roblox_Develop_Api_UpdatePluginRequest = z
   .object({
     name: z.string(),
     description: z.string(),
     commentsEnabled: z.boolean(),
   })
-  .partial();
+  ;
 
 const schemas = {
   Roblox_Api_Develop_Models_Response_AssetVotingModel,

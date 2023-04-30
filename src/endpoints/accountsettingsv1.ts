@@ -8,21 +8,21 @@ const Roblox_AccountSettings_Api_Models_AccountsSettingsMetadataModel = z
     IsParentalNotificationSettingsInUIEnabled: z.boolean(),
     IsContentControlsEnabled: z.boolean(),
   })
-  .partial();
-const Roblox_AccountSettings_Api_AppChatPrivacyResponse = z.object({ appChatPrivacy: z.string() }).partial();
+  ;
+const Roblox_AccountSettings_Api_AppChatPrivacyResponse = z.object({ appChatPrivacy: z.string() });
 const Roblox_AccountSettings_Api_AppChatPrivacyRequest = z
   .object({
     appChatPrivacy: z.union([z.literal(1), z.literal(2), z.literal(3), z.literal(4), z.literal(5), z.literal(6)]),
   })
-  .partial();
-const Roblox_Web_WebAPI_ApiEmptyResponseModel = z.object({}).partial();
+  ;
+const Roblox_Web_WebAPI_ApiEmptyResponseModel = z.object({});
 const Roblox_AccountSettings_Api_EmailResponse = z
   .object({
     emailAddress: z.string(),
     verified: z.boolean(),
     canBypassPasswordForEmailUpdate: z.boolean(),
   })
-  .partial();
+  ;
 const Roblox_AccountSettings_Api_UpdateEmailRequest = z
   .object({
     password: z.string(),
@@ -30,23 +30,23 @@ const Roblox_AccountSettings_Api_UpdateEmailRequest = z
     skipVerificationEmail: z.boolean(),
     isAdsAccount: z.boolean(),
   })
-  .partial();
-const Roblox_AccountSettings_Api_GameChatPrivacyResponse = z.object({ gameChatPrivacy: z.string() }).partial();
+  ;
+const Roblox_AccountSettings_Api_GameChatPrivacyResponse = z.object({ gameChatPrivacy: z.string() });
 const Roblox_AccountSettings_Api_GameChatPrivacyRequest = z
   .object({
     gameChatPrivacy: z.union([z.literal(1), z.literal(2), z.literal(3), z.literal(4), z.literal(5), z.literal(6)]),
   })
-  .partial();
+  ;
 const Roblox_AccountSettings_Api_InventoryPrivacyResponse = z
   .object({
     inventoryPrivacy: z.union([z.literal(1), z.literal(2), z.literal(3), z.literal(4), z.literal(5), z.literal(6)]),
   })
-  .partial();
+  ;
 const Roblox_AccountSettings_Api_InventoryPrivacyRequest = z
   .object({
     inventoryPrivacy: z.union([z.literal(1), z.literal(2), z.literal(3), z.literal(4), z.literal(5), z.literal(6)]),
   })
-  .partial();
+  ;
 const Roblox_AccountSettings_Api_InventoryPrivacyUpdateResponse = z
   .object({
     inventoryPrivacy: z.union([z.literal(1), z.literal(2), z.literal(3), z.literal(4), z.literal(5), z.literal(6)]),
@@ -62,17 +62,17 @@ const Roblox_AccountSettings_Api_InventoryPrivacyUpdateResponse = z
     ]),
     privacySettingResponse: z.union([z.literal(0), z.literal(1)]),
   })
-  .partial();
+  ;
 const Roblox_AccountSettings_Api_PrivateMessagePrivacyResponse = z
   .object({ privateMessagePrivacy: z.string() })
-  .partial();
+  ;
 const Roblox_AccountSettings_Api_PrivateMessagePrivacyRequest = z
   .object({ privateMessagePrivacy: z.string() })
-  .partial();
-const Roblox_AccountSettings_Api_ThemeConfigurationResponse = z.object({ themeType: z.string() }).partial();
-const Roblox_AccountSettings_Api_ThemeConfigurationRequest = z.object({ themeType: z.string() }).partial();
-const Roblox_Web_WebAPI_Models_ApiArrayResponse_System_String_ = z.object({ data: z.array(z.string()) }).partial();
-const Roblox_AccountSettings_Api_TradePrivacyResponse = z.object({ tradePrivacy: z.string() }).partial();
+  ;
+const Roblox_AccountSettings_Api_ThemeConfigurationResponse = z.object({ themeType: z.string() });
+const Roblox_AccountSettings_Api_ThemeConfigurationRequest = z.object({ themeType: z.string() });
+const Roblox_Web_WebAPI_Models_ApiArrayResponse_System_String_ = z.object({ data: z.array(z.string()) });
+const Roblox_AccountSettings_Api_TradePrivacyResponse = z.object({ tradePrivacy: z.string() });
 const Roblox_AccountSettings_Api_UpdateTradePrivacyRequest = z
   .object({
     tradePrivacy: z.union([
@@ -86,7 +86,7 @@ const Roblox_AccountSettings_Api_UpdateTradePrivacyRequest = z
       z.literal(7),
     ]),
   })
-  .partial();
+  ;
 const Roblox_AccountSettings_Api_TradePrivacyUpdateResponse = z
   .object({
     tradePrivacy: z.union([
@@ -102,33 +102,33 @@ const Roblox_AccountSettings_Api_TradePrivacyUpdateResponse = z
     inventoryPrivacy: z.union([z.literal(1), z.literal(2), z.literal(3), z.literal(4), z.literal(5), z.literal(6)]),
     privacySettingResponse: z.union([z.literal(0), z.literal(1)]),
   })
-  .partial();
-const Roblox_AccountSettings_Api_TradeValueResponse = z.object({ tradeValue: z.string() }).partial();
+  ;
+const Roblox_AccountSettings_Api_TradeValueResponse = z.object({ tradeValue: z.string() });
 const Roblox_AccountSettings_Api_TradeValueRequest = z
   .object({
     tradeValue: z.union([z.literal(0), z.literal(1), z.literal(2), z.literal(3), z.literal(4)]),
   })
-  .partial();
+  ;
 const Roblox_AccountSettings_Api_Models_Response_GetBlockedUsersResponse = z
   .object({ blockedUserIds: z.array(z.number()) })
-  .partial();
+  ;
 const Roblox_AccountSettings_Api_Models_BlockedUser = z
   .object({
     userId: z.number().int(),
     name: z.string(),
     displayName: z.string(),
   })
-  .partial();
+  ;
 const Roblox_AccountSettings_Api_Models_Response_GetDetailedBlockedUsersResponse = z
   .object({
     blockedUsers: z.array(Roblox_AccountSettings_Api_Models_BlockedUser),
     maxBlockedUsers: z.number().int(),
     total: z.number().int(),
   })
-  .partial();
+  ;
 const Roblox_AccountSettings_Api_SendVerifyEmailRequest = z
   .object({ freeItem: z.boolean(), isAdsAccount: z.boolean() })
-  .partial();
+  ;
 
 const schemas = {
   Roblox_AccountSettings_Api_Models_AccountsSettingsMetadataModel,

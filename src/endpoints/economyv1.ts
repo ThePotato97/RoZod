@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-const Roblox_Web_Responses_Economy_CurrencyResponse = z.object({ robux: z.number().int() }).partial();
+const Roblox_Web_Responses_Economy_CurrencyResponse = z.object({ robux: z.number().int() });
 
 const schemas = {
   Roblox_Web_Responses_Economy_CurrencyResponse,

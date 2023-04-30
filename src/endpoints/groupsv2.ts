@@ -2,7 +2,7 @@ import { z } from 'zod';
 
 const Roblox_Web_Responses_RelatedEntityTypeResponse_Roblox_Web_Responses_Groups_GroupOwnerType_ = z
   .object({ id: z.number().int(), type: z.literal(0), name: z.string() })
-  .partial();
+  ;
 const Roblox_Web_Responses_Groups_GroupResponseV2 = z
   .object({
     id: z.number().int(),
@@ -13,10 +13,10 @@ const Roblox_Web_Responses_Groups_GroupResponseV2 = z
     created: z.string().datetime(),
     hasVerifiedBadge: z.boolean(),
   })
-  .partial();
+  ;
 const Roblox_Web_WebAPI_Models_ApiArrayResponse_Roblox_Web_Responses_Groups_GroupResponseV2_ = z
   .object({ data: z.array(Roblox_Web_Responses_Groups_GroupResponseV2) })
-  .partial();
+  ;
 const Roblox_Groups_Api_Models_Response_UserModel = z
   .object({
     buildersClubMembershipType: z.union([z.literal(0), z.literal(1), z.literal(2), z.literal(3), z.literal(4)]),
@@ -25,7 +25,7 @@ const Roblox_Groups_Api_Models_Response_UserModel = z
     username: z.string(),
     displayName: z.string(),
   })
-  .partial();
+  ;
 const Roblox_Groups_Api_GroupRoleResponse = z
   .object({
     id: z.number().int(),
@@ -34,13 +34,13 @@ const Roblox_Groups_Api_GroupRoleResponse = z
     rank: z.number().int(),
     memberCount: z.number().int(),
   })
-  .partial();
+  ;
 const Roblox_Groups_Api_UserGroupRoleResponse = z
   .object({
     user: Roblox_Groups_Api_Models_Response_UserModel,
     role: Roblox_Groups_Api_GroupRoleResponse,
   })
-  .partial();
+  ;
 const Roblox_Groups_Api_GroupWallPostV2Model = z
   .object({
     id: z.number().int(),
@@ -49,14 +49,14 @@ const Roblox_Groups_Api_GroupWallPostV2Model = z
     created: z.string().datetime(),
     updated: z.string().datetime(),
   })
-  .partial();
+  ;
 const Roblox_Web_WebAPI_Models_ApiPageResponse_Roblox_Groups_Api_GroupWallPostV2Model_ = z
   .object({
     previousPageCursor: z.string(),
     nextPageCursor: z.string(),
     data: z.array(Roblox_Groups_Api_GroupWallPostV2Model),
   })
-  .partial();
+  ;
 const Roblox_Groups_Api_CreateWallPostRequest = z
   .object({
     body: z.string(),
@@ -65,7 +65,7 @@ const Roblox_Groups_Api_CreateWallPostRequest = z
     captchaProvider: z.string(),
     challengeId: z.string(),
   })
-  .partial();
+  ;
 const Roblox_Web_Responses_Groups_GroupBasicResponse = z
   .object({
     id: z.number().int(),
@@ -73,19 +73,19 @@ const Roblox_Web_Responses_Groups_GroupBasicResponse = z
     memberCount: z.number().int(),
     hasVerifiedBadge: z.boolean(),
   })
-  .partial();
+  ;
 const Roblox_Web_Responses_Groups_GroupRoleBasicResponse = z
   .object({ id: z.number().int(), name: z.string(), rank: z.number().int() })
-  .partial();
+  ;
 const Roblox_Groups_Api_GroupMembershipResponse = z
   .object({
     group: Roblox_Web_Responses_Groups_GroupBasicResponse,
     role: Roblox_Web_Responses_Groups_GroupRoleBasicResponse,
   })
-  .partial();
+  ;
 const Roblox_Web_WebAPI_Models_ApiArrayResponse_Roblox_Groups_Api_GroupMembershipResponse_ = z
   .object({ data: z.array(Roblox_Groups_Api_GroupMembershipResponse) })
-  .partial();
+  ;
 
 const schemas = {
   Roblox_Web_Responses_RelatedEntityTypeResponse_Roblox_Web_Responses_Groups_GroupOwnerType_,

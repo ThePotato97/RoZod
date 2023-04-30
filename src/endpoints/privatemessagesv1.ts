@@ -7,7 +7,7 @@ const Roblox_PrivateMessages_Api_Models_VerifiedSkinnyUserResponse = z
     name: z.string(),
     displayName: z.string(),
   })
-  .partial();
+  ;
 const Roblox_PrivateMessages_Api_Models_AnnouncementsDetailsResponse = z
   .object({
     id: z.number().int(),
@@ -17,16 +17,16 @@ const Roblox_PrivateMessages_Api_Models_AnnouncementsDetailsResponse = z
     created: z.string().datetime(),
     updated: z.string().datetime(),
   })
-  .partial();
+  ;
 const Roblox_PrivateMessages_Api_Models_GetAnnouncementsResponse = z
   .object({
     collection: z.array(Roblox_PrivateMessages_Api_Models_AnnouncementsDetailsResponse),
     totalCollectionSize: z.number().int(),
   })
-  .partial();
+  ;
 const Roblox_PrivateMessages_Api_Models_AnnouncementsMetadataResponse = z
   .object({ numOfAnnouncements: z.number().int() })
-  .partial();
+  ;
 const Roblox_PrivateMessages_Api_Models_MessageDetailsResponse = z
   .object({
     id: z.number().int(),
@@ -40,7 +40,7 @@ const Roblox_PrivateMessages_Api_Models_MessageDetailsResponse = z
     isSystemMessage: z.boolean(),
     isReportAbuseDisplayed: z.boolean(),
   })
-  .partial();
+  ;
 const Roblox_PrivateMessages_Api_Models_GetMessagesResponse = z
   .object({
     collection: z.array(Roblox_PrivateMessages_Api_Models_MessageDetailsResponse),
@@ -48,20 +48,20 @@ const Roblox_PrivateMessages_Api_Models_GetMessagesResponse = z
     totalPages: z.number().int(),
     pageNumber: z.number().int(),
   })
-  .partial();
+  ;
 const Roblox_PrivateMessages_Api_Models_Messages_Response_CanMessageResponse = z
   .object({ canMessage: z.boolean() })
-  .partial();
-const Roblox_PrivateMessages_Api_Models_UnreadMessagesCountResponse = z.object({ count: z.number().int() }).partial();
-const Roblox_PrivateMessages_Api_Models_BatchMessagesRequest = z.object({ messageIds: z.array(z.number()) }).partial();
+  ;
+const Roblox_PrivateMessages_Api_Models_UnreadMessagesCountResponse = z.object({ count: z.number().int() });
+const Roblox_PrivateMessages_Api_Models_BatchMessagesRequest = z.object({ messageIds: z.array(z.number()) });
 const Roblox_PrivateMessages_Api_Models_FailedMessageResponse = z
   .object({ messageId: z.number().int(), errorMessage: z.string() })
-  .partial();
+  ;
 const Roblox_PrivateMessages_Api_Models_BatchMessagesResponse = z
   .object({
     failedMessages: z.array(Roblox_PrivateMessages_Api_Models_FailedMessageResponse),
   })
-  .partial();
+  ;
 const Roblox_PrivateMessages_Api_Models_SendMessageRequest = z
   .object({
     userId: z.number().int(),
@@ -71,14 +71,14 @@ const Roblox_PrivateMessages_Api_Models_SendMessageRequest = z
     replyMessageId: z.number().int(),
     includePreviousMessage: z.boolean(),
   })
-  .partial();
+  ;
 const Roblox_PrivateMessages_Api_Models_SendMessageResponse = z
   .object({
     success: z.boolean(),
     shortMessage: z.string(),
     message: z.string(),
   })
-  .partial();
+  ;
 
 const schemas = {
   Roblox_PrivateMessages_Api_Models_VerifiedSkinnyUserResponse,

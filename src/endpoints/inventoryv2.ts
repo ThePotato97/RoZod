@@ -6,7 +6,7 @@ const Roblox_Web_Responses_RelatedEntityTypeResponse_Roblox_Agents_AgentType_ = 
     type: z.union([z.literal(1), z.literal(2)]),
     name: z.string(),
   })
-  .partial();
+  ;
 const Roblox_Inventory_Api_V2_AssetOwnerResponse = z
   .object({
     id: z.number().int(),
@@ -15,14 +15,14 @@ const Roblox_Inventory_Api_V2_AssetOwnerResponse = z
     created: z.string().datetime(),
     updated: z.string().datetime(),
   })
-  .partial();
+  ;
 const Roblox_Web_WebAPI_Models_ApiPageResponse_Roblox_Inventory_Api_V2_AssetOwnerResponse_ = z
   .object({
     previousPageCursor: z.string(),
     nextPageCursor: z.string(),
     data: z.array(Roblox_Inventory_Api_V2_AssetOwnerResponse),
   })
-  .partial();
+  ;
 const Roblox_Inventory_Api_V2_UserAssetItemModelV2 = z
   .object({
     assetId: z.number().int(),
@@ -104,21 +104,21 @@ const Roblox_Inventory_Api_V2_UserAssetItemModelV2 = z
     ]),
     created: z.string().datetime(),
   })
-  .partial();
+  ;
 const Roblox_Web_WebAPI_Models_ApiPageResponse_Roblox_Inventory_Api_V2_UserAssetItemModelV2_ = z
   .object({
     previousPageCursor: z.string(),
     nextPageCursor: z.string(),
     data: z.array(Roblox_Inventory_Api_V2_UserAssetItemModelV2),
   })
-  .partial();
+  ;
 const Roblox_Inventory_Api_Models_UserModel = z
   .object({
     userId: z.number().int(),
     username: z.string(),
     buildersClubMembershipType: z.union([z.literal(0), z.literal(1), z.literal(2), z.literal(3), z.literal(4)]),
   })
-  .partial();
+  ;
 const Roblox_Inventory_Api_Models_InventoryItemModel = z
   .object({
     userAssetId: z.number().int(),
@@ -131,14 +131,14 @@ const Roblox_Inventory_Api_Models_InventoryItemModel = z
     created: z.string().datetime(),
     updated: z.string().datetime(),
   })
-  .partial();
+  ;
 const Roblox_Web_WebAPI_Models_ApiPageResponse_Roblox_Inventory_Api_Models_InventoryItemModel_ = z
   .object({
     previousPageCursor: z.string(),
     nextPageCursor: z.string(),
     data: z.array(Roblox_Inventory_Api_Models_InventoryItemModel),
   })
-  .partial();
+  ;
 
 const schemas = {
   Roblox_Web_Responses_RelatedEntityTypeResponse_Roblox_Agents_AgentType_,

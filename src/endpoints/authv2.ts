@@ -2,17 +2,17 @@ import { z } from 'zod';
 
 const Roblox_Authentication_Api_Models_AuthMetaDataResponse = z
   .object({ cookieLawNoticeTimeout: z.number().int() })
-  .partial();
+  ;
 const Roblox_Authentication_Api_Models_CanSendCredentialsVerificationMessageResponse = z
   .object({ canSend: z.boolean() })
-  .partial();
+  ;
 const Roblox_Authentication_Api_Models_SendCredentialsVerificationMessageRequest = z
   .object({
     credentialType: z.union([z.literal(0), z.literal(1), z.literal(2), z.literal(3), z.literal(4)]),
     credentialValue: z.string(),
     password: z.string(),
   })
-  .partial();
+  ;
 const Roblox_Authentication_Api_Models_MetadataResponse = z
   .object({
     isUpdateUsernameEnabled: z.boolean(),
@@ -25,18 +25,18 @@ const Roblox_Authentication_Api_Models_MetadataResponse = z
     IsKoreaIdVerificationEnabled: z.boolean(),
     IsPasswordRequiredForUsernameChange: z.boolean(),
   })
-  .partial();
-const Roblox_Authentication_Api_Models_PasswordStatusResponse = z.object({ valid: z.boolean() }).partial();
+  ;
+const Roblox_Authentication_Api_Models_PasswordStatusResponse = z.object({ valid: z.boolean() });
 const Roblox_Web_Responses_Users_LegacyUserResponse = z
   .object({
     userId: z.number().int(),
     username: z.string(),
     displayName: z.string(),
   })
-  .partial();
+  ;
 const Roblox_Authentication_Api_Models_PasswordResetMetadataResponse = z
   .object({ users: z.array(Roblox_Web_Responses_Users_LegacyUserResponse) })
-  .partial();
+  ;
 const Roblox_Authentication_Api_Models_PasswordResetModel = z
   .object({
     targetType: z.union([z.literal(0), z.literal(1)]),
@@ -47,16 +47,16 @@ const Roblox_Authentication_Api_Models_PasswordResetModel = z
     twoStepVerificationChallengeId: z.string(),
     twoStepVerificationToken: z.string(),
   })
-  .partial();
+  ;
 const Roblox_Web_Responses_Users_SkinnyUserResponse = z
   .object({ id: z.number().int(), name: z.string(), displayName: z.string() })
-  .partial();
+  ;
 const Roblox_Authentication_Api_Models_TwoStepVerificationSentResponse = z
   .object({
     mediaType: z.union([z.literal(0), z.literal(1), z.literal(2), z.literal(3), z.literal(4)]),
     ticket: z.string(),
   })
-  .partial();
+  ;
 const Roblox_Authentication_Api_Models_LoginResponse = z
   .object({
     user: Roblox_Web_Responses_Users_SkinnyUserResponse,
@@ -64,16 +64,16 @@ const Roblox_Authentication_Api_Models_LoginResponse = z
     identityVerificationLoginTicket: z.string(),
     isBanned: z.boolean(),
   })
-  .partial();
+  ;
 const Roblox_Authentication_Api_Models_PasswordValidationResponse = z
   .object({
     code: z.union([z.literal(0), z.literal(1), z.literal(2), z.literal(3), z.literal(4), z.literal(5)]),
     message: z.string(),
   })
-  .partial();
+  ;
 const Roblox_Authentication_Api_Models_PasswordValidationModel = z
   .object({ username: z.string(), password: z.string() })
-  .partial();
+  ;
 const Roblox_Authentication_Api_Models_RecoveryMetadataResponse = z
   .object({
     isOnPhone: z.boolean(),
@@ -82,7 +82,7 @@ const Roblox_Authentication_Api_Models_RecoveryMetadataResponse = z
     isPhoneFeatureEnabledForPassword: z.boolean(),
     isBedev2CaptchaEnabledForPasswordReset: z.boolean(),
   })
-  .partial();
+  ;
 const Roblox_Authentication_Api_Models_RevertAccountInfoResponse = z
   .object({
     isTwoStepVerificationEnabled: z.boolean(),
@@ -93,7 +93,7 @@ const Roblox_Authentication_Api_Models_RevertAccountInfoResponse = z
     username: z.string(),
     ticket: z.string(),
   })
-  .partial();
+  ;
 const Roblox_Authentication_Api_Models_RevertAccountSubmitRequest = z
   .object({
     UserId: z.number().int(),
@@ -103,15 +103,15 @@ const Roblox_Authentication_Api_Models_RevertAccountSubmitRequest = z
     TwoStepVerificationChallengeId: z.string(),
     TwoStepVerificationToken: z.string(),
   })
-  .partial();
+  ;
 const Roblox_Authentication_Api_Models_TwoStepVerificationMetadataResponse = z
   .object({
     codeLength: z.number().int(),
     loadingImageUrl: z.string(),
     supportUrl: z.string(),
   })
-  .partial();
-const Roblox_Authentication_Api_Models_UsernamesResponse = z.object({ usernames: z.array(z.string()) }).partial();
+  ;
+const Roblox_Authentication_Api_Models_UsernamesResponse = z.object({ usernames: z.array(z.string()) });
 const Roblox_Authentication_Api_Models_UsernameValidationResponse = z
   .object({
     code: z.union([
@@ -128,18 +128,18 @@ const Roblox_Authentication_Api_Models_UsernameValidationResponse = z
     ]),
     message: z.string(),
   })
-  .partial();
+  ;
 const Roblox_Authentication_Api_Models_UsernameValidationRequest = z
   .object({
     username: z.string(),
     birthday: z.string().datetime(),
     context: z.union([z.literal(0), z.literal(1), z.literal(2)]),
   })
-  .partial();
-const Roblox_Web_WebAPI_ApiEmptyResponseModel = z.object({}).partial();
+  ;
+const Roblox_Web_WebAPI_ApiEmptyResponseModel = z.object({});
 const Roblox_Authentication_Api_Models_Request_IdentityVerificationLoginRequest = z
   .object({ loginTicket: z.string(), resultToken: z.string() })
-  .partial();
+  ;
 const Roblox_Authentication_Api_Models_Request_SecureAuthenticationIntentModel = z
   .object({
     clientPublicKey: z.string(),
@@ -147,7 +147,7 @@ const Roblox_Authentication_Api_Models_Request_SecureAuthenticationIntentModel =
     saiSignature: z.string(),
     serverNonce: z.string(),
   })
-  .partial();
+  ;
 const Roblox_Authentication_Api_Models_LoginRequest = z
   .object({
     ctype: z.union([z.literal(0), z.literal(1), z.literal(2), z.literal(3), z.literal(4)]),
@@ -162,7 +162,7 @@ const Roblox_Authentication_Api_Models_LoginRequest = z
     captchaProvider: z.string(),
     challengeId: z.string(),
   })
-  .partial();
+  ;
 const Roblox_Authentication_Api_Models_SendResetPasswordRequest = z
   .object({
     targetType: z.union([z.literal(0), z.literal(1)]),
@@ -172,31 +172,31 @@ const Roblox_Authentication_Api_Models_SendResetPasswordRequest = z
     captchaProvider: z.string(),
     challengeId: z.string(),
   })
-  .partial();
+  ;
 const Roblox_Authentication_Api_Models_SendResetPasswordResponse = z
   .object({
     nonce: z.string(),
     transmissionType: z.union([z.literal(0), z.literal(1)]),
   })
-  .partial();
+  ;
 const Roblox_Authentication_Api_Models_PasswordResetVerificationRequest = z
   .object({
     targetType: z.union([z.literal(0), z.literal(1)]),
     nonce: z.string(),
     code: z.string(),
   })
-  .partial();
+  ;
 const Roblox_Authentication_Api_Models_ForgotPasswordUserResponse = z
   .object({
     user: Roblox_Web_Responses_Users_LegacyUserResponse,
     ticket: z.string(),
   })
-  .partial();
+  ;
 const Roblox_Authentication_Api_Models_PasswordResetVerificationResponse = z
   .object({
     userTickets: z.array(Roblox_Authentication_Api_Models_ForgotPasswordUserResponse),
   })
-  .partial();
+  ;
 const Roblox_Authentication_Api_Models_ReferralDataModel = z
   .object({
     acquisitionTime: z.string().datetime(),
@@ -211,13 +211,13 @@ const Roblox_Authentication_Api_Models_ReferralDataModel = z
     requestSessionId: z.string(),
     offerId: z.string(),
   })
-  .partial();
+  ;
 const Roblox_Authentication_Api_Models_Request_OtpSessionModel = z
   .object({
     otpSessionToken: z.string(),
     otpContactType: z.union([z.literal(1), z.literal(2)]),
   })
-  .partial();
+  ;
 const Roblox_Authentication_Api_Models_SignupRequest = z
   .object({
     username: z.string(),
@@ -244,10 +244,10 @@ const Roblox_Authentication_Api_Models_SignupRequest = z
     captchaProvider: z.string(),
     challengeId: z.string(),
   })
-  .partial();
+  ;
 const Roblox_Authentication_Api_Models_SignupResponse = z
   .object({ userId: z.number().int(), starterPlaceId: z.number().int() })
-  .partial();
+  ;
 const Roblox_Authentication_Api_Models_TwoStepVerificationTicketRequest = z
   .object({
     username: z.string(),
@@ -264,7 +264,7 @@ const Roblox_Authentication_Api_Models_TwoStepVerificationTicketRequest = z
       z.literal(8),
     ]),
   })
-  .partial();
+  ;
 const Roblox_Authentication_Api_Models_TwoStepVerificationVerifyRequest = z
   .object({
     username: z.string(),
@@ -283,22 +283,22 @@ const Roblox_Authentication_Api_Models_TwoStepVerificationVerifyRequest = z
       z.literal(8),
     ]),
   })
-  .partial();
+  ;
 const Roblox_Authentication_Api_Models_PasswordChangeModel = z
   .object({ currentPassword: z.string(), newPassword: z.string() })
-  .partial();
+  ;
 const Roblox_Authentication_Api_Models_UsernameChangeRequest = z
   .object({ username: z.string(), password: z.string() })
-  .partial();
+  ;
 const Roblox_Authentication_Api_Models_RecoverUsernameRequest = z
   .object({
     targetType: z.union([z.literal(0), z.literal(1)]),
     target: z.string(),
   })
-  .partial();
+  ;
 const Roblox_Authentication_Api_Models_RecoverUsernameResponse = z
   .object({ transmissionType: z.union([z.literal(0), z.literal(1)]) })
-  .partial();
+  ;
 
 const schemas = {
   Roblox_Authentication_Api_Models_AuthMetaDataResponse,

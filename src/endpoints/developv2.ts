@@ -12,14 +12,14 @@ const Roblox_Api_Develop_AssetVersion = z
     isEqualToCurrentPublishedVersion: z.boolean(),
     isPublished: z.boolean(),
   })
-  .partial();
+  ;
 const Roblox_Web_WebAPI_Models_ApiPageResponse_Roblox_Api_Develop_AssetVersion_ = z
   .object({
     previousPageCursor: z.string(),
     nextPageCursor: z.string(),
     data: z.array(Roblox_Api_Develop_AssetVersion),
   })
-  .partial();
+  ;
 const Roblox_Api_Develop_Models_PlaceModelV2 = z
   .object({
     maxPlayerCount: z.number().int(),
@@ -49,7 +49,7 @@ const Roblox_Api_Develop_Models_PlaceModelV2 = z
     description: z.string(),
     isRootPlace: z.boolean(),
   })
-  .partial();
+  ;
 const Roblox_Api_Develop_Models_PlaceConfigurationModelV2 = z
   .object({
     name: z.string(),
@@ -61,14 +61,14 @@ const Roblox_Api_Develop_Models_PlaceConfigurationModelV2 = z
     allowedGearTypes: z.array(z.string()),
     isAllGenresAllowed: z.boolean(),
   })
-  .partial();
+  ;
 const Roblox_Platform_UniverseSettings_UniverseAvatarAssetOverrideResponseModel = z
   .object({
     assetID: z.number().int(),
     assetTypeID: z.number().int(),
     isPlayerChoice: z.boolean(),
   })
-  .partial();
+  ;
 const Roblox_Web_Responses_Avatar_ScaleModel = z
   .object({
     height: z.number(),
@@ -78,14 +78,14 @@ const Roblox_Web_Responses_Avatar_ScaleModel = z
     proportion: z.number(),
     bodyType: z.number(),
   })
-  .partial();
+  ;
 const Roblox_Api_Develop_Models_UniversePluginPermissions = z
   .object({
     IsThirdPartyTeleportAllowed: z.boolean(),
     IsThirdPartyAssetAllowed: z.boolean(),
     IsThirdPartyPurchaseAllowed: z.boolean(),
   })
-  .partial();
+  ;
 const Roblox_Api_Develop_Models_UniverseSettingsRequestV2 = z
   .object({
     allowPrivateServers: z.boolean(),
@@ -126,10 +126,10 @@ const Roblox_Api_Develop_Models_UniverseSettingsRequestV2 = z
     optInRegions: z.array(z.union([z.literal(0), z.literal(1)])),
     optOutRegions: z.array(z.union([z.literal(0), z.literal(1)])),
   })
-  .partial();
+  ;
 const Roblox_Api_Develop_Models_UniverseModerationPolicyStatus = z
   .object({ region: z.union([z.literal(0), z.literal(1)]), status: z.string() })
-  .partial();
+  ;
 const Roblox_Api_Develop_Models_UniverseSettingsResponseV2 = z
   .object({
     allowPrivateServers: z.boolean(),
@@ -170,8 +170,8 @@ const Roblox_Api_Develop_Models_UniverseSettingsResponseV2 = z
     studioAccessToApisAllowed: z.boolean(),
     permissions: Roblox_Api_Develop_Models_UniversePluginPermissions,
   })
-  .partial();
-const Roblox_Web_WebAPI_ApiEmptyResponseModel = z.object({}).partial();
+  ;
+const Roblox_Web_WebAPI_ApiEmptyResponseModel = z.object({});
 
 const schemas = {
   Roblox_Api_Develop_AssetVersion,

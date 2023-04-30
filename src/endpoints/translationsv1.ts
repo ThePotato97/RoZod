@@ -1,9 +1,9 @@
 import { z } from 'zod';
 
-const Roblox_Translations_Api_TranslationsResponse = z.object({ url: z.string(), locale: z.string() }).partial();
+const Roblox_Translations_Api_TranslationsResponse = z.object({ url: z.string(), locale: z.string() });
 const Roblox_Web_WebAPI_Models_ApiArrayResponse_Roblox_Translations_Api_TranslationsResponse_ = z
   .object({ data: z.array(Roblox_Translations_Api_TranslationsResponse) })
-  .partial();
+  ;
 
 const schemas = {
   Roblox_Translations_Api_TranslationsResponse,

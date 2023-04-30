@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-const Roblox_Inventory_Api_Models_AssetIdListModel = z.object({ assetIds: z.array(z.number()) }).partial();
+const Roblox_Inventory_Api_Models_AssetIdListModel = z.object({ assetIds: z.array(z.number()) });
 const Roblox_Inventory_Api_Models_CollectibleUserAssetModel = z
   .object({
     userAssetId: z.number().int(),
@@ -13,15 +13,15 @@ const Roblox_Inventory_Api_Models_CollectibleUserAssetModel = z
     buildersClubMembershipType: z.union([z.literal(0), z.literal(1), z.literal(2), z.literal(3), z.literal(4)]),
     isOnHold: z.boolean(),
   })
-  .partial();
+  ;
 const Roblox_Web_WebAPI_Models_ApiPageResponse_Roblox_Inventory_Api_Models_CollectibleUserAssetModel_ = z
   .object({
     previousPageCursor: z.string(),
     nextPageCursor: z.string(),
     data: z.array(Roblox_Inventory_Api_Models_CollectibleUserAssetModel),
   })
-  .partial();
-const Roblox_Inventory_Api_Models_CanViewInventoryResponse = z.object({ canView: z.boolean() }).partial();
+  ;
+const Roblox_Inventory_Api_Models_CanViewInventoryResponse = z.object({ canView: z.boolean() });
 const Roblox_Inventory_Api_AssetsExplorerCategoryItemModel = z
   .object({
     name: z.string(),
@@ -31,7 +31,7 @@ const Roblox_Inventory_Api_AssetsExplorerCategoryItemModel = z
     type: z.union([z.literal(0), z.literal(1), z.literal(2), z.literal(3)]),
     categoryType: z.string(),
   })
-  .partial();
+  ;
 const Roblox_Inventory_Api_AssetsExplorerCategoryModel = z
   .object({
     name: z.string(),
@@ -39,19 +39,19 @@ const Roblox_Inventory_Api_AssetsExplorerCategoryModel = z
     categoryType: z.string(),
     items: z.array(Roblox_Inventory_Api_AssetsExplorerCategoryItemModel),
   })
-  .partial();
+  ;
 const Roblox_Inventory_Api_CategoriesModel = z
   .object({
     categories: z.array(Roblox_Inventory_Api_AssetsExplorerCategoryModel),
   })
-  .partial();
+  ;
 const Roblox_Inventory_Api_Models_InventoryPageResponse = z
   .object({
     data: z.array(z.unknown()),
     total: z.number().int(),
     includesAccessories: z.boolean(),
   })
-  .partial();
+  ;
 const Roblox_Inventory_Api_Models_IItemModel = z
   .object({
     Id: z.number().int(),
@@ -59,15 +59,15 @@ const Roblox_Inventory_Api_Models_IItemModel = z
     Type: z.union([z.literal(0), z.literal(1), z.literal(2), z.literal(3)]),
     InstanceId: z.number().int(),
   })
-  .partial();
+  ;
 const Roblox_Web_WebAPI_Models_ApiPageResponse_Roblox_Inventory_Api_Models_IItemModel_ = z
   .object({
     previousPageCursor: z.string(),
     nextPageCursor: z.string(),
     data: z.array(Roblox_Inventory_Api_Models_IItemModel),
   })
-  .partial();
-const Roblox_Web_WebAPI_ApiEmptyResponseModel = z.object({}).partial();
+  ;
+const Roblox_Web_WebAPI_ApiEmptyResponseModel = z.object({});
 
 const schemas = {
   Roblox_Inventory_Api_Models_AssetIdListModel,
